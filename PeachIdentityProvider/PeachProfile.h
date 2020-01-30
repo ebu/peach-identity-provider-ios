@@ -31,6 +31,11 @@ typedef NS_ENUM(NSInteger, PeachGender) {
 @property (nonatomic, readonly, copy, nullable) NSString *uid;
 
 /**
+ *  Login used to identify the user (usually the email address).
+ */
+@property (nonatomic, readonly, copy, nullable) NSString *login;
+
+/**
  *  The unique public account identifier.
  */
 @property (nonatomic, readonly, copy, nullable) NSString *publicUid;
@@ -69,6 +74,11 @@ typedef NS_ENUM(NSInteger, PeachGender) {
  *  `YES` iff the account has been verified.
  */
 @property (nonatomic, readonly, getter=isVerified) BOOL verified;
+
+/**
+ *  The user prefered language.
+ */
+@property (nonatomic, readonly, copy, nullable) NSString *language;
 
 @end
 
