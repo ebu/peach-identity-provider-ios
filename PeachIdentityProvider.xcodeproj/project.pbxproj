@@ -123,7 +123,6 @@
 		9534CEB223ACB4BF005D79A2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9534CEB323ACB4BF005D79A2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9534CECE23ACB5A1005D79A2 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9534CECF23ACB5A1005D79A2 /* Demo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Demo copy-Info.plist"; path = "/Users/rayanarnaout/Projects/PeachIdentityProvider/Demo copy-Info.plist"; sourceTree = "<absolute>"; };
 		95C8548A23A2921000A1B772 /* PeachIdentityProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PeachIdentityProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C8548D23A2921000A1B772 /* PeachIdentityProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeachIdentityProvider.h; sourceTree = "<group>"; };
 		95C8548E23A2921000A1B772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -227,7 +226,6 @@
 				95DA478D23AA80720040430A /* Demo */,
 				95C8548B23A2921000A1B772 /* Products */,
 				95C854B223A3C33300A1B772 /* Frameworks */,
-				9534CECF23ACB5A1005D79A2 /* Demo copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -757,6 +755,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ch.ebu.PeachIdentityProvider;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -784,6 +783,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ch.ebu.PeachIdentityProvider;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

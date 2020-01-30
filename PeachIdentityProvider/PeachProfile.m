@@ -12,12 +12,14 @@
 
 @property (nonatomic, copy, nullable) NSString *uid;
 @property (nonatomic, copy, nullable) NSString *publicUid;
+@property (nonatomic, copy, nullable) NSString *login;
 @property (nonatomic, copy, nullable) NSString *displayName;
 @property (nonatomic, copy, nullable) NSString *emailAddress;
 @property (nonatomic, copy, nullable) NSString *firstName;
 @property (nonatomic, copy, nullable) NSString *lastName;
 @property (nonatomic) PeachGender gender;
 @property (nonatomic, nullable) NSDate *birthdate;
+@property (nonatomic, copy, nullable) NSString *language;
 
 @property (nonatomic, getter=isVerified) BOOL verified;
 
@@ -38,6 +40,7 @@
         [self parseGender:[decoder decodeObjectForKey:@"gender"]];
         [self parseBirthdate:[decoder decodeObjectForKey:@"birthdate"]];
         self.verified = [decoder decodeBoolForKey:@"verified"];
+        self.language = [decoder decodeObjectForKey:@"language"];
     }
     return self;
 }
@@ -47,12 +50,14 @@
     [encoder encodeObject:self.uid forKey:@"uid"];
     [encoder encodeObject:self.publicUid forKey:@"publicUid"];
     [encoder encodeObject:self.displayName forKey:@"displayName"];
-    [encoder encodeObject:self.emailAddress forKey:@"login"];
+    [encoder encodeObject:self.login forKey:@"login"];
+    [encoder encodeObject:self.emailAddress forKey:@"email"];
     [encoder encodeObject:self.firstName forKey:@"firstName"];
     [encoder encodeObject:self.lastName forKey:@"lastName"];
     [encoder encodeObject:self.genderString forKey:@"gender"];
     [encoder encodeObject:self.birthdayString forKey:@"birthdate"];
     [encoder encodeBool:self.verified forKey:@"verified"];
+    [encoder encodeObject:self.language forKey:@"language"];
 }
 
 
@@ -76,13 +81,15 @@
             self.uid = [user valueForKey:@"id"];
             self.publicUid = [user valueForKey:@"public_uid"];
             self.displayName = [user valueForKey:@"display_name"];
-            self.emailAddress = [user valueForKey:@"login"];
+            self.emailAddress = [user valueForKey:@"email"];
+            self.login = [user valueForKey:@"login"];
             self.firstName = [self parseString:[user valueForKey:@"firstname"]];
             self.lastName = [self parseString:[user valueForKey:@"lastname"]];
             [self parseGender: [self parseString:[user valueForKey:@"gender"]]];
             [self parseBirthdate: [self parseString:[user valueForKey:@"date_of_birth"]]];
             NSNumber *verifiedNumber = [user valueForKey:@"email_verified"];
             if (verifiedNumber && verifiedNumber != (NSNumber *)[NSNull null]) self.verified = [verifiedNumber boolValue];
+            self.language = [self parseString:[user valueForKey:@"language"]];
         }
         
     }
@@ -91,7 +98,7 @@
 
 - (NSString *)parseString:(NSString *)value
 {
-    if (value == (NSString *)[NSNull null] || [value isEqualToString:@"<null>"]) {
+    if (value == (NSString *)[NSNull null] || [value isEqualToString:@"<null>"] || [value isEqualToString:@""]) {
         return nil;
     }
     return value;
@@ -101,14 +108,16 @@
     NSMutableDictionary *dict = [NSMutableDictionary new];
     [dict setObject:self.uid forKey:@"uid"];
     [dict setObject:self.publicUid forKey:@"publicUid"];
-    [dict setObject:self.displayName forKey:@"displayName"];
-    [dict setObject:self.emailAddress forKey:@"login"];
-    [dict setObject:self.firstName forKey:@"firstName"];
-    [dict setObject:self.lastName forKey:@"lastName"];
+    if (self.displayName != nil) [dict setObject:self.displayName forKey:@"displayName"];
+    if (self.login != nil) [dict setObject:self.login forKey:@"login"];
+    if (self.emailAddress != nil) [dict setObject:self.login forKey:@"email"];
+    if (self.firstName != nil) [dict setObject:self.firstName forKey:@"firstName"];
+    if (self.lastName != nil) [dict setObject:self.lastName forKey:@"lastName"];
     NSString *genderString = [self genderString];
     if (genderString != nil) [dict setObject:genderString forKey:@"gender"];
     [dict setObject:self.birthdayString forKey:@"birthdate"];
     [dict setObject:@(self.verified) forKey:@"verified"];
+    if (self.language != nil) [dict setObject:self.language forKey:@"language"];
     return [dict copy];
 }
 
