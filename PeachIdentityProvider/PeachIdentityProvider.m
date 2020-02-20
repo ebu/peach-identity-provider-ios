@@ -511,6 +511,161 @@ __attribute__((constructor)) static void PeachIdentityProviderInit(void)
     return YES;
 }
 
+
+- (void)signupWithEmailAddress:(NSString *)email password:(NSString *)password completionBlock:(void (^)(NSError * _Nullable error))completionBlock
+{
+    if (_loggingIn) {
+        return;
+    }
+    
+    _loggingIn = YES;
+    
+    NSURL *URL = [self.webserviceURL URLByAppendingPathComponent:@"v2/session/signup"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
+    request.HTTPMethod = @"POST";
+    [request setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    NSString *encodedEmail = [email stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.alphanumericCharacterSet];
+    NSString *encodedPassword = [password stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.alphanumericCharacterSet];
+    
+    NSString *bodyString = [NSString stringWithFormat:@"email=%@&password=%@", encodedEmail, encodedPassword];
+    NSData *body = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
+    [request setValue:@(body.length).stringValue forHTTPHeaderField:@"Content-Length"];
+    request.HTTPBody = body;
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        _loggingIn = NO;
+        if (error) {
+            completionBlock(error);
+            return;
+        }
+        else {
+            NSString *sessionToken = nil;
+            if ([response isKindOfClass:NSHTTPURLResponse.class]) {
+                NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *)response;
+                
+                if (HTTPResponse.statusCode >= 400) {
+                    NSError *jsonError = nil;
+                    NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+                    if (jsonError == nil && jsonResponse != nil) {
+                        if ([jsonResponse objectForKey:@"error"] != nil) {
+                            NSDictionary *errorDictionary = [jsonResponse objectForKey:@"error"];
+                            if (errorDictionary != nil && [errorDictionary objectForKey:@"code"] != nil) {
+                                NSString *errorCode = [errorDictionary objectForKey:@"code"];
+                                if ([errorCode isEqualToString:@"BAD_DATA"]) {
+                                    NSError *signupError = [NSError errorWithDomain:PeachSignupErrorDomain code:PeachSignupBadDataCode userInfo:errorDictionary];
+                                    completionBlock(signupError);
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                
+                NSArray<NSHTTPCookie *> *cookies = [NSHTTPCookie cookiesWithResponseHeaderFields:HTTPResponse.allHeaderFields forURL:HTTPResponse.URL];
+                for (NSHTTPCookie *cookie in cookies) {
+                    if ([cookie.name isEqualToString:@"identity.provider.sid"]) {
+                        sessionToken = cookie.value;
+                    }
+                }
+            }
+            
+            if (sessionToken) {
+                self.sessionToken = sessionToken;
+                [self updateAccount];
+                completionBlock(nil);
+            }
+            else {
+                NSError *signupError = [NSError errorWithDomain:PeachSignupErrorDomain code:PeachSignupFailedCode userInfo:nil];
+                completionBlock(signupError);
+            }
+            
+        }
+        
+    }] resume];
+}
+
+- (void)loginWithEmailAddress:(NSString *)email password:(NSString *)password completionBlock:(void (^)(NSError * _Nullable error))completionBlock
+{
+    if (_loggingIn) {
+        return;
+    }
+    
+    _loggingIn = YES;
+    
+    NSURL *URL = [self.webserviceURL URLByAppendingPathComponent:@"v2/session/login"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
+    request.HTTPMethod = @"POST";
+    [request setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    NSString *encodedEmail = [email stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.alphanumericCharacterSet];
+    NSString *encodedPassword = [password stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.alphanumericCharacterSet];
+    
+    NSString *bodyString = [NSString stringWithFormat:@"email=%@&password=%@", encodedEmail, encodedPassword];
+    NSData *body = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
+    [request setValue:@(body.length).stringValue forHTTPHeaderField:@"Content-Length"];
+    request.HTTPBody = body;
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        _loggingIn = NO;
+        if (error) {
+            completionBlock(error);
+            return;
+        }
+        else {
+            NSString *sessionToken = nil;
+            if ([response isKindOfClass:NSHTTPURLResponse.class]) {
+                NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *)response;
+                
+                if (HTTPResponse.statusCode >= 400) {
+                    NSError *jsonError = nil;
+                    NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+                    if (jsonError == nil && jsonResponse != nil) {
+                        if ([jsonResponse objectForKey:@"error"] != nil) {
+                            NSDictionary *errorDictionary = [jsonResponse objectForKey:@"error"];
+                            if (errorDictionary != nil && [errorDictionary objectForKey:@"code"] != nil) {
+                                NSString *errorCode = [errorDictionary objectForKey:@"code"];
+                                if ([errorCode isEqualToString:@"INCORRECT_LOGIN_OR_PASSWORD"]) {
+                                    NSError *loginError = [NSError errorWithDomain:PeachLoginErrorDomain code:PeachLoginIcorrectCode userInfo:errorDictionary];
+                                    completionBlock(loginError);
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                
+                NSArray<NSHTTPCookie *> *cookies = [NSHTTPCookie cookiesWithResponseHeaderFields:HTTPResponse.allHeaderFields forURL:HTTPResponse.URL];
+                for (NSHTTPCookie *cookie in cookies) {
+                    if ([cookie.name isEqualToString:@"identity.provider.sid"]) {
+                        sessionToken = cookie.value;
+                    }
+                }
+            }
+            
+            if (sessionToken) {
+                self.sessionToken = sessionToken;
+                [self updateAccount];
+                completionBlock(nil);
+            }
+            else {
+                NSError *loginError = [NSError errorWithDomain:PeachLoginErrorDomain code:PeachLoginFailedCode userInfo:nil];
+                completionBlock(loginError);
+            }
+            
+        }
+        
+    }] resume];
+}
+
+
+
 - (void)cleanup
 {
     [self.profileRetrievalTask cancel];
@@ -569,7 +724,6 @@ __attribute__((constructor)) static void PeachIdentityProviderInit(void)
             NSHTTPURLResponse *HTTPURLResponse = (NSHTTPURLResponse *)response;
             NSInteger HTTPStatusCode = HTTPURLResponse.statusCode;
             
-            // Properly handle HTTP error codes >= 400 as real errors
             if (HTTPStatusCode >= 400) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self cleanup];
@@ -597,7 +751,6 @@ __attribute__((constructor)) static void PeachIdentityProviderInit(void)
     // Execute the task
     [task resume];
     
-
     self.profileRetrievalTask = task;
 }
 

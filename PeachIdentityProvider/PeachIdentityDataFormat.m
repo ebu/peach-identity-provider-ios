@@ -21,3 +21,11 @@ NSString * const PeachDeletedKey = @"PeachDeleted";
 
 NSString * const PeachServiceUnauthorizedKey = @"PeachServiceUnauthorizedKey";
 NSString * const PeachServiceDeletedKey = @"PeachServiceDeletedKey";
+
+NSErrorDomain const PeachSignupErrorDomain = @"PeachSignupErrorDomain";
+NSErrorDomain const PeachLoginErrorDomain = @"PeachLoginErrorDomain";
+
+NSInteger const PeachSignupBadDataCode = 9990;
+NSInteger const PeachSignupFailedCode = 9991;
+NSInteger const PeachLoginIcorrectCode = 9992;
+NSInteger const PeachLoginFailedCode = 9993;

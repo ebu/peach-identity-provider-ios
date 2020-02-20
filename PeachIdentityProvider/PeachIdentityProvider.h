@@ -77,6 +77,18 @@ typedef NS_ENUM(NSInteger, PeachIdentityProviderLoginMethod) {
 - (BOOL)loginWithEmailAddress:(nullable NSString *)emailAddress;
 
 /**
+ * Manually sign up a user by sending an email and a password. Completion block is called when the request is finished, with an error if it failed.
+ * When the sign up is finished, an update profile task is launched to retrieve the newly created user profile. Retrieval of the profile will trigger the usual notification
+ */
+- (void)signupWithEmailAddress:(NSString *)email password:(NSString *)password completionBlock:(void (^)(NSError * _Nullable error))completionBlock;
+
+/**
+ * Manually log in a user by sending an email and a password. Completion block is called when the request is finished, with an error if it failed.
+ * When the log in is finished, an update profile task is launched to retrieve the user profile. Retrieval of the profile will trigger the usual notification
+*/
+- (void)loginWithEmailAddress:(NSString *)email password:(NSString *)password completionBlock:(void (^)(NSError * _Nullable error))completionBlock;
+
+/**
  *  Logout the current user, if any.
  *
  *  @return `YES` if a user was logged out. If no user was logged in before calling this method, `NO` is returned.

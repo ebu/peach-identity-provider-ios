@@ -117,3 +117,32 @@ To logout the current user, simply call `-logout`;
 [PeachIdentityProvider.defaultProvider logout];
 ```
 
+## Advanced API calls
+
+The framework provides methods to login and signup without using a WebView.
+When using those methods, on a successful login or signup, the framework automatically starts the retrieval of the profile. When the profile is retrieved, it will launch the usual notification.
+
+### Signup
+
+```objectivec
+
+PeachIdentityProvider *identityProvider = PeachIdentityProvider.defaultProvider;
+[identityProvider signupWithEmailAddress:@"randomuser@ebu.ch" password:@"str0NgP@ssW0rd" completionBlock:^(NSError * _Nullable error) {
+    NSLog(@"error = %@", error.domain);
+    if ([error.domain isEqualToString:PeachSignupErrorDomain]){
+        NSLog(@"json = %@", error.userInfo);
+    }
+}];
+```
+
+### Login
+
+```objectivec
+PeachIdentityProvider *identityProvider = PeachIdentityProvider.defaultProvider;
+[identityProvider loginWithEmailAddress:@"randomuser@ebu.ch" password:@"str0NgP@ssW0rd" completionBlock:^(NSError * _Nullable error) {
+    NSLog(@"error = %@", error.domain);
+    if ([error.domain isEqualToString:PeachLoginErrorDomain]){
+        NSLog(@"json = %@", error.userInfo);
+    }
+}];
+```
