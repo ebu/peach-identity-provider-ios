@@ -44,4 +44,12 @@ OBJC_EXPORT NSString * const PeachServiceUnauthorizedKey;   // Key to an `NSNumb
 OBJC_EXPORT NSString * const PeachServiceDeletedKey;        // Key to an `NSNumber` wrapping a boolean, set to `YES` iff the user deleted his/her account.
 
 
+OBJC_EXPORT NSErrorDomain const PeachSignupErrorDomain;
+OBJC_EXPORT NSErrorDomain const PeachLoginErrorDomain;
+
+OBJC_EXPORT NSInteger const PeachSignupBadDataCode; // BAD_DATA
+OBJC_EXPORT NSInteger const PeachSignupFailedCode; // Any other reason
+OBJC_EXPORT NSInteger const PeachLoginIcorrectCode; // INCORRECT_LOGIN_OR_PASSWORD
+OBJC_EXPORT NSInteger const PeachLoginFailedCode; // Any other reason
+
 NS_ASSUME_NONNULL_END
