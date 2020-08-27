@@ -16,6 +16,12 @@ static NSString * const LastLoggedInEmailAddress = @"LastLoggedInEmailAddress";
 @property (nonatomic, weak) IBOutlet UILabel *displayNameLabel;
 @property (nonatomic, weak) IBOutlet UIButton *accountButton;
 
+@property (nonatomic, weak) IBOutlet UIView *nativeLoginView;
+@property (nonatomic, weak) IBOutlet UITextField *emailTextField;
+@property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
+
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 @end
 
 @implementation ViewController
@@ -52,7 +58,10 @@ static NSString * const LastLoggedInEmailAddress = @"LastLoggedInEmailAddress";
 {
     PeachIdentityProvider *identityProvider = PeachIdentityProvider.defaultProvider;
     
+    self.activityIndicator.hidden = YES;
+    
     if (identityProvider.loggedIn) {
+        self.nativeLoginView.alpha = 0;
         self.displayNameLabel.text = identityProvider.profile.displayName ?: identityProvider.emailAddress ?: @"-";
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Logout", nil)
                                                                                   style:UIBarButtonItemStylePlain
@@ -60,6 +69,7 @@ static NSString * const LastLoggedInEmailAddress = @"LastLoggedInEmailAddress";
                                                                                  action:@selector(logout:)];
     }
     else {
+        self.nativeLoginView.alpha = 1;
         self.displayNameLabel.text = @"Not logged in";
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Login", nil)
                                                                                   style:UIBarButtonItemStylePlain
@@ -75,6 +85,27 @@ static NSString * const LastLoggedInEmailAddress = @"LastLoggedInEmailAddress";
 - (IBAction)showAccount:(id)sender
 {
     [PeachIdentityProvider.defaultProvider showProfileViewWithTitle:@"My Profile"];
+}
+
+- (IBAction)nativeLogin:(id)sender
+{
+    self.activityIndicator.hidden = NO;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.nativeLoginView.alpha = 0;
+    }];
+    
+    PeachIdentityProvider *identityProvider = PeachIdentityProvider.defaultProvider;
+    [identityProvider loginWithEmailAddress:self.emailTextField.text password:self.passwordTextField.text completionBlock:^(NSError * _Nullable error) {
+        NSLog(@"error = %@", error.domain);
+        if ([error.domain isEqualToString:PeachLoginErrorDomain]){
+            dispatch_async(dispatch_get_main_queue(), ^{
+               self.nativeLoginView.alpha = 1;
+               self.activityIndicator.hidden = YES;
+            });
+            NSLog(@"json = %@", error.userInfo);
+        }
+    }];
 }
 
 - (void)login:(id)sender
