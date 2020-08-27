@@ -26,14 +26,14 @@ typedef NS_ENUM(NSInteger, PeachIdentityProviderLoginMethod) {
     /**
      *  Login is displayed in a dedicated Safari web view.
      */
-    PeachIdentityProviderLoginMethodSafari = PeachIdentityProviderLoginMethodDefault,
+    PeachIdentityProviderLoginMethodSafari API_UNAVAILABLE(tvos) = PeachIdentityProviderLoginMethodDefault,
     /**
      *  Use an authentication session when available (for iOS 11 and later). User credentials can be shared between your
      *  app and Safari. This makes it possible for a user to automatically authenticate in another app associated with
      *  the same identity provider (if credentials are still available). Note that a system alert will inform the user
      *  about credentials sharing first.
      */
-    PeachIdentityProviderLoginMethodAuthenticationSession
+    PeachIdentityProviderLoginMethodAuthenticationSession API_UNAVAILABLE(tvos)
 };
 
 
@@ -74,7 +74,7 @@ typedef NS_ENUM(NSInteger, PeachIdentityProviderLoginMethod) {
  *  @return `YES` if the form could be opened. The method might return `NO` if another attempt is already being made
  *          or if a user is already logged in.
  */
-- (BOOL)loginWithEmailAddress:(nullable NSString *)emailAddress;
+- (BOOL)loginWithEmailAddress:(nullable NSString *)emailAddress API_UNAVAILABLE(tvos);
 
 /**
  * Manually sign up a user by sending an email and a password. Completion block is called when the request is finished, with an error if it failed.
@@ -133,7 +133,7 @@ typedef NS_ENUM(NSInteger, PeachIdentityProviderLoginMethod) {
  *  @discussion This method must be called from the main thread. If no user is logged in, calling the method does nothing.
  *              Note that only one account view can be presented at any given time.
  */
-- (void)showProfileViewWithTitle:(NSString *)title;
+- (void)showProfileViewWithTitle:(NSString *)title API_UNAVAILABLE(tvos);
 
 /**
  *  If an unauthorized error is received when using a third-party service on behalf of the current identity, call this

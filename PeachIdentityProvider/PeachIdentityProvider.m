@@ -8,8 +8,12 @@
 
 #import "PeachIdentityProvider.h"
 #import "UIWindow+Peach.h"
-#import "PeachIdentityProviderNavigationController.h"
-#import "PeachIdentityProviderWebViewController.h"
+
+#if TARGET_OS_IOS
+    #import "PeachIdentityProviderNavigationController.h"
+    #import "PeachIdentityProviderWebViewController.h"
+    #import <SafariServices/SafariServices.h>
+#endif
 
 #import <objc/runtime.h>
 #import <AuthenticationServices/AuthenticationServices.h>
@@ -17,7 +21,7 @@
 #import <libextobjc/libextobjc.h>
 #import <FXReachability/FXReachability.h>
 #import <MAKVONotificationCenter/MAKVONotificationCenter.h>
-#import <SafariServices/SafariServices.h>
+
 
 @import UIKit;
 
@@ -45,15 +49,10 @@ static NSString *PeachProfileStoreKey(void)
     return [NSBundle.mainBundle.bundleIdentifier stringByAppendingString:@".account"];
 }
 
-static BOOL swizzled_application_openURL_options(id self, SEL _cmd, UIApplication *application, NSURL *URL, NSDictionary<UIApplicationOpenURLOptionsKey,id> *options);
-
-@interface NSObject (PeachIdentityProviderApplicationDelegateHooks)
-
-- (BOOL)peach_default_application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options;
-
-@end
-
-@interface PeachIdentityProvider() <SFSafariViewControllerDelegate, ASWebAuthenticationPresentationContextProviding>
+@interface PeachIdentityProvider()
+#if TARGET_OS_IOS
+<SFSafariViewControllerDelegate, ASWebAuthenticationPresentationContextProviding>
+#endif
 
 @property (nonatomic, copy) NSString *identifier;
 
@@ -70,34 +69,6 @@ static BOOL swizzled_application_openURL_options(id self, SEL _cmd, UIApplicatio
 
 @end
 
-
-__attribute__((constructor)) static void PeachIdentityProviderInit(void)
-{
-    NSMutableDictionary<NSValue *, NSValue *> *originalImplementations = [NSMutableDictionary dictionary];
-    
-    // The `-application:openURL:options:` application delegate method must be available at the time the application is
-    // instantiated, see https://stackoverflow.com/questions/14696078/runtime-added-applicationopenurl-not-fires.
-    unsigned int numberOfClasses = 0;
-    Class *classList = objc_copyClassList(&numberOfClasses);
-    for (unsigned int i = 0; i < numberOfClasses; ++i) {
-        Class cls = classList[i];
-        if (class_conformsToProtocol(cls, @protocol(UIApplicationDelegate))) {
-            Method method = class_getInstanceMethod(cls, @selector(application:openURL:options:));
-            if (! method) {
-                method = class_getInstanceMethod(cls, @selector(peach_default_application:openURL:options:));
-                class_addMethod(cls, @selector(application:openURL:options:), method_getImplementation(method), method_getTypeEncoding(method));
-            }
-          
-            NSValue *key = [NSValue valueWithNonretainedObject:cls];
-            originalImplementations[key] = [NSValue valueWithPointer:method_getImplementation(method)];
-            
-            class_replaceMethod(cls, @selector(application:openURL:options:), (IMP)swizzled_application_openURL_options, method_getTypeEncoding(method));
-        }
-    }
-    free(classList);
-    
-    _originalImplementations = [originalImplementations copy];
-}
 
 
 
@@ -207,7 +178,87 @@ __attribute__((constructor)) static void PeachIdentityProviderInit(void)
 
 
 
-#pragma mark Callback URL handling
+#pragma mark Getters and setters
+
+- (BOOL)isLoggedIn
+{
+    return (self.sessionToken != nil);
+}
+
+- (NSString *)emailAddress
+{
+    return [self.keyChainStore stringForKey:PeachEmailStoreKey()];
+}
+
+- (void)setEmailAddress:(NSString *)emailAddress
+{
+    [self.keyChainStore setString:emailAddress forKey:PeachEmailStoreKey()];
+}
+
+- (PeachProfile *)profile
+{
+    NSData *profileData = [self.keyChainStore dataForKey:PeachProfileStoreKey()];
+    if (!profileData) return nil;
+    
+#if TARGET_OS_TV
+    return [NSKeyedUnarchiver unarchivedObjectOfClass:PeachProfile.class fromData:profileData error:NULL];
+#else
+    if (@available(iOS 11, *)) {
+        return [NSKeyedUnarchiver unarchivedObjectOfClass:PeachProfile.class fromData:profileData error:NULL];
+    }
+    else {
+        return [NSKeyedUnarchiver unarchiveObjectWithData:profileData];
+    }
+#endif
+}
+
+- (void)setProfile:(PeachProfile *)profile
+{
+    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+    userInfo[PeachPreviousProfileKey] = self.profile;
+    
+    NSData *profileData;
+    if (profile) {
+    #if TARGET_OS_TV
+        profileData = [NSKeyedArchiver archivedDataWithRootObject:profile requiringSecureCoding:YES error:NULL];
+    #else
+        if (@available(iOS 11, *)) {
+            profileData = [NSKeyedArchiver archivedDataWithRootObject:profile requiringSecureCoding:YES error:NULL];
+        }
+        else {
+            profileData = [NSKeyedArchiver archivedDataWithRootObject:profile];
+        }
+    #endif
+    }
+    else profileData = nil;
+    
+    [self.keyChainStore setData:profileData forKey:PeachProfileStoreKey()];
+    userInfo[PeachProfileKey] = profile;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+    
+        [[NSNotificationCenter defaultCenter] postNotificationName:PeachDidUpdateProfileNotification
+                                                            object:self
+                                                          userInfo:[userInfo copy]];
+    });
+}
+
+- (NSString *)sessionToken
+{
+    return [self.keyChainStore stringForKey:PeachSessionTokenStoreKey()];
+}
+
+- (void)setSessionToken:(NSString *)sessionToken
+{
+    [self.keyChainStore setString:sessionToken forKey:PeachSessionTokenStoreKey()];
+}
+
+
+
+
+#if TARGET_OS_IOS
+
+#pragma mark URL handling
 
 - (BOOL)handleCallbackURL:(NSURL *)callbackURL
 {
@@ -282,65 +333,6 @@ __attribute__((constructor)) static void PeachIdentityProviderInit(void)
 }
 
 
-
-
-#pragma mark Getters and setters
-
-- (BOOL)isLoggedIn
-{
-    return (self.sessionToken != nil);
-}
-
-- (NSString *)emailAddress
-{
-    return [self.keyChainStore stringForKey:PeachEmailStoreKey()];
-}
-
-- (void)setEmailAddress:(NSString *)emailAddress
-{
-    [self.keyChainStore setString:emailAddress forKey:PeachEmailStoreKey()];
-}
-
-- (PeachProfile *)profile
-{
-    NSData *profileData = [self.keyChainStore dataForKey:PeachProfileStoreKey()];
-    return profileData ? [NSKeyedUnarchiver unarchiveObjectWithData:profileData] : nil;
-}
-
-- (void)setProfile:(PeachProfile *)profile
-{
-    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-    userInfo[PeachPreviousProfileKey] = self.profile;
-    
-    NSData *profileData = profile ? [NSKeyedArchiver archivedDataWithRootObject:profile] : nil;
-    [self.keyChainStore setData:profileData forKey:PeachProfileStoreKey()];
-    userInfo[PeachProfileKey] = profile;
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-    
-        [[NSNotificationCenter defaultCenter] postNotificationName:PeachDidUpdateProfileNotification
-                                                            object:self
-                                                          userInfo:[userInfo copy]];
-    });
-}
-
-- (NSString *)sessionToken
-{
-    return [self.keyChainStore stringForKey:PeachSessionTokenStoreKey()];
-}
-
-- (void)setSessionToken:(NSString *)sessionToken
-{
-    [self.keyChainStore setString:sessionToken forKey:PeachSessionTokenStoreKey()];
-}
-
-
-
-
-
-
-#pragma mark URL handling
-
 - (NSURL *)redirectURL
 {
     NSURLComponents *URLComponents = [NSURLComponents componentsWithURL:self.webserviceURL resolvingAgainstBaseURL:NO];
@@ -389,20 +381,20 @@ __attribute__((constructor)) static void PeachIdentityProviderInit(void)
     return queryItem.value;
 }
 
-
+#endif
 
 
 
 
 
 #pragma mark Login / logout
-
+#if TARGET_OS_IOS
 - (BOOL)loginWithEmailAddress:(NSString *)emailAddress
 {
     if (_loggingIn || self.loggedIn) {
         return NO;
     }
-    
+
     @weakify(self)
     void (^completionHandler)(NSURL * _Nullable, NSError * _Nullable) = ^(NSURL * _Nullable callbackURL, NSError * _Nullable error) {
         void (^notifyCancel)(void) = ^{
@@ -474,6 +466,7 @@ __attribute__((constructor)) static void PeachIdentityProviderInit(void)
     _loggingIn = YES;
     return YES;
 }
+#endif
 
 - (BOOL)logout
 {
@@ -489,7 +482,9 @@ __attribute__((constructor)) static void PeachIdentityProviderInit(void)
     }
     
     [self cleanup];
+#if TARGET_OS_IOS
     [self dismissProfileView];
+#endif
     
     [[NSNotificationCenter defaultCenter] postNotificationName:PeachUserDidLogoutNotification
                                                         object:self
@@ -709,8 +704,9 @@ __attribute__((constructor)) static void PeachIdentityProviderInit(void)
             else{
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self cleanup];
+#if TARGET_OS_IOS
                     [self dismissProfileView];
-                    
+#endif
                     [[NSNotificationCenter defaultCenter] postNotificationName:PeachUserDidLogoutNotification
                                                                         object:self
                                                                       userInfo:@{ PeachServiceUnauthorizedKey : @YES }];
@@ -727,7 +723,9 @@ __attribute__((constructor)) static void PeachIdentityProviderInit(void)
             if (HTTPStatusCode >= 400) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self cleanup];
+#if TARGET_OS_IOS
                     [self dismissProfileView];
+#endif
                     
                     [[NSNotificationCenter defaultCenter] postNotificationName:PeachUserDidLogoutNotification
                                                                         object:self
@@ -756,7 +754,15 @@ __attribute__((constructor)) static void PeachIdentityProviderInit(void)
 
 
 
+#pragma mark Unauthorization reporting
 
+- (void)reportUnauthorization
+{
+    [self updateAccount];
+}
+
+
+#if TARGET_OS_IOS
 #pragma mark Profile view
 
 - (void)showProfileViewWithTitle:(NSString *)title
@@ -815,12 +821,6 @@ __attribute__((constructor)) static void PeachIdentityProviderInit(void)
     return [request copy];
 }
 
-#pragma mark Unauthorization reporting
-
-- (void)reportUnauthorization
-{
-    [self updateAccount];
-}
 
 
 
@@ -852,6 +852,8 @@ __attribute__((constructor)) static void PeachIdentityProviderInit(void)
     [self dismissProfileView];
 }
 
+#endif
+
 #pragma mark Notifications
 
 - (void)reachabilityDidChange:(NSNotification *)notification
@@ -876,6 +878,16 @@ __attribute__((constructor)) static void PeachIdentityProviderInit(void)
 @end
 
 
+#if TARGET_OS_IOS
+
+static BOOL swizzled_application_openURL_options(id self, SEL _cmd, UIApplication *application, NSURL *URL, NSDictionary<UIApplicationOpenURLOptionsKey,id> *options);
+
+@interface NSObject (PeachIdentityProviderApplicationDelegateHooks)
+
+- (BOOL)peach_default_application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options;
+
+@end
+
 @implementation NSObject (PeachIdentityProviderApplicationDelegateHooks)
 
 - (BOOL)peach_default_application:(UIApplication *)application openURL:(NSURL *)URL options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
@@ -884,6 +896,37 @@ __attribute__((constructor)) static void PeachIdentityProviderInit(void)
 }
 
 @end
+
+
+__attribute__((constructor)) static void PeachIdentityProviderInit(void)
+{
+    NSMutableDictionary<NSValue *, NSValue *> *originalImplementations = [NSMutableDictionary dictionary];
+    
+    // The `-application:openURL:options:` application delegate method must be available at the time the application is
+    // instantiated, see https://stackoverflow.com/questions/14696078/runtime-added-applicationopenurl-not-fires.
+    unsigned int numberOfClasses = 0;
+    Class *classList = objc_copyClassList(&numberOfClasses);
+    for (unsigned int i = 0; i < numberOfClasses; ++i) {
+        Class cls = classList[i];
+        if (class_conformsToProtocol(cls, @protocol(UIApplicationDelegate))) {
+            Method method = class_getInstanceMethod(cls, @selector(application:openURL:options:));
+            if (! method) {
+                method = class_getInstanceMethod(cls, @selector(peach_default_application:openURL:options:));
+                class_addMethod(cls, @selector(application:openURL:options:), method_getImplementation(method), method_getTypeEncoding(method));
+            }
+          
+            NSValue *key = [NSValue valueWithNonretainedObject:cls];
+            originalImplementations[key] = [NSValue valueWithPointer:method_getImplementation(method)];
+            
+            class_replaceMethod(cls, @selector(application:openURL:options:), (IMP)swizzled_application_openURL_options, method_getTypeEncoding(method));
+        }
+    }
+    free(classList);
+    
+    _originalImplementations = [originalImplementations copy];
+}
+
+
 
 static BOOL swizzled_application_openURL_options(id self, SEL _cmd, UIApplication *application, NSURL *URL, NSDictionary<UIApplicationOpenURLOptionsKey,id> *options)
 {
@@ -917,3 +960,4 @@ static BOOL swizzled_application_openURL_options(id self, SEL _cmd, UIApplicatio
 }
 
 
+#endif
