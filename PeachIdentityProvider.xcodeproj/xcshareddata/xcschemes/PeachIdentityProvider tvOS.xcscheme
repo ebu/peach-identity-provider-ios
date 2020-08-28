@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "958C7C3924F808DD0009E8AE"
-               BuildableName = "PeachIdentityProvider tvOS.framework"
+               BuildableName = "PeachIdentityProvider.framework"
                BlueprintName = "PeachIdentityProvider tvOS"
                ReferencedContainer = "container:PeachIdentityProvider.xcodeproj">
             </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "958C7C3924F808DD0009E8AE"
-            BuildableName = "PeachIdentityProvider tvOS.framework"
+            BuildableName = "PeachIdentityProvider.framework"
             BlueprintName = "PeachIdentityProvider tvOS"
             ReferencedContainer = "container:PeachIdentityProvider.xcodeproj">
          </BuildableReference>
