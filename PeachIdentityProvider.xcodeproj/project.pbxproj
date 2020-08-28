@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9518212C23C3820500CCB871 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9518212B23C3820400CCB871 /* README.md */; };
 		9534CEAB23ACB17F005D79A2 /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95DA47B723ABBD310040430A /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9534CEAC23ACB19F005D79A2 /* MAKVONotificationCenter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95C854BB23A8BFAE00A1B772 /* MAKVONotificationCenter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9534CEAD23ACB1A2005D79A2 /* libextobjc.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95C854BD23A8BFAE00A1B772 /* libextobjc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -24,7 +23,6 @@
 		958C7C4F24F808DD0009E8AE /* PeachIdentityDataFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C854AD23A37A9700A1B772 /* PeachIdentityDataFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958C7C5024F808DD0009E8AE /* UIWindow+Peach.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C854A423A2923D00A1B772 /* UIWindow+Peach.h */; };
 		958C7C5124F808DD0009E8AE /* PeachIdentityProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C8548D23A2921000A1B772 /* PeachIdentityProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958C7C5324F808DD0009E8AE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9518212B23C3820400CCB871 /* README.md */; };
 		958C7C5E24F8093B0009E8AE /* MAKVONotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5A24F8093B0009E8AE /* MAKVONotificationCenter.framework */; };
 		958C7C6024F8093B0009E8AE /* libextobjc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5B24F8093B0009E8AE /* libextobjc.framework */; };
 		958C7C6224F8093B0009E8AE /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5C24F8093B0009E8AE /* UICKeyChainStore.framework */; };
@@ -185,6 +183,7 @@
 		958C7C7824F819680009E8AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		958C7C7A24F819690009E8AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		958C7C7B24F819690009E8AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		958C7C8C24F8E9070009E8AE /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		95C8548A23A2921000A1B772 /* PeachIdentityProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PeachIdentityProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C8548D23A2921000A1B772 /* PeachIdentityProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeachIdentityProvider.h; sourceTree = "<group>"; };
 		95C8548E23A2921000A1B772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -322,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				9518212B23C3820400CCB871 /* README.md */,
+				958C7C8C24F8E9070009E8AE /* CHANGELOG.md */,
 				95C8548C23A2921000A1B772 /* PeachIdentityProvider */,
 				95C8549723A2921000A1B772 /* PeachIdentityProviderTests */,
 				95DA478D23AA80720040430A /* Demo */,
@@ -632,7 +632,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				958C7C5324F808DD0009E8AE /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,7 +649,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9518212C23C3820500CCB871 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
