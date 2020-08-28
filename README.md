@@ -103,7 +103,7 @@ Once a user has successfully logged in, a corresponding session token is availab
 
 Once a user has successfully logged in, a corresponding PeachProfile object will be filled. Use the `PeachIdentityProvider.defaultProvider.profile` property when you need to retrieve information regarding the user.
 
-### Account page
+### Profile page (only on iOS)
 
 When a user is logged in, its account information can be displayed and edited within your application through a dedicated web page. To display this page, call `-showAccountView`:
 ```objectivec
@@ -119,7 +119,7 @@ To logout the current user, simply call `-logout`;
 
 ## Advanced API calls
 
-The framework provides methods to login and signup without using a WebView.
+The framework provides methods to login and signup without using a WebView (for TvOS for example).
 When using those methods, on a successful login or signup, the framework automatically starts the retrieval of the profile. When the profile is retrieved, it will launch the usual notification.
 
 ### Signup

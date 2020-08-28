@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="16097.2" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="appleTV" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diA-kK-EjV">
+                                <rect key="frame" x="857" y="101" width="206" height="86"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Log out"/>
+                                <connections>
+                                    <action selector="logout:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="3SJ-Zp-In3"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iiP-Cg-x0J">
+                                <rect key="frame" x="592.5" y="122" width="735" height="508"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="joG-vV-PbT">
+                                        <rect key="frame" x="86" y="56" width="563" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="wr2-eq-ezm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3pZ-cC-mLF">
+                                        <rect key="frame" x="86" y="146" width="563" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="hgX-X0-M2v"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIP-Ax-8NI">
+                                        <rect key="frame" x="277" y="346" width="181" height="86"/>
+                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                        <state key="normal" title="Log in"/>
+                                        <connections>
+                                            <action selector="nativeLogin:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="9lG-Zu-mzz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="3pZ-cC-mLF" firstAttribute="width" secondItem="joG-vV-PbT" secondAttribute="width" id="3Kk-cC-xSC"/>
+                                    <constraint firstItem="joG-vV-PbT" firstAttribute="top" secondItem="iiP-Cg-x0J" secondAttribute="top" constant="56" id="5ev-Lu-NlH"/>
+                                    <constraint firstAttribute="height" constant="508" id="CyI-tx-hdm"/>
+                                    <constraint firstItem="joG-vV-PbT" firstAttribute="leading" secondItem="iiP-Cg-x0J" secondAttribute="leading" constant="86" id="HVd-15-q9G"/>
+                                    <constraint firstItem="joG-vV-PbT" firstAttribute="centerX" secondItem="iiP-Cg-x0J" secondAttribute="centerX" id="ZwM-Vf-kBU"/>
+                                    <constraint firstItem="3pZ-cC-mLF" firstAttribute="centerX" secondItem="iiP-Cg-x0J" secondAttribute="centerX" id="k6z-i0-kIA"/>
+                                    <constraint firstItem="3pZ-cC-mLF" firstAttribute="top" secondItem="joG-vV-PbT" secondAttribute="bottom" constant="30" id="sDf-bu-IYQ"/>
+                                    <constraint firstItem="FIP-Ax-8NI" firstAttribute="centerX" secondItem="iiP-Cg-x0J" secondAttribute="centerX" id="sRx-WS-ohG"/>
+                                    <constraint firstAttribute="bottom" secondItem="FIP-Ax-8NI" secondAttribute="bottom" constant="76" id="yjb-7c-lp7"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;display name&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oB-rY-ckk">
+                                <rect key="frame" x="90" y="35" width="1740" height="46"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iiP-Cg-x0J" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.382812" id="BNS-lo-hFN"/>
+                            <constraint firstItem="iiP-Cg-x0J" firstAttribute="centerX" secondItem="wu6-TO-1qx" secondAttribute="centerX" id="Ecd-tb-w3N"/>
+                            <constraint firstItem="diA-kK-EjV" firstAttribute="centerX" secondItem="9oB-rY-ckk" secondAttribute="centerX" id="Ept-gW-R3z"/>
+                            <constraint firstItem="iiP-Cg-x0J" firstAttribute="top" secondItem="wu6-TO-1qx" secondAttribute="top" constant="62" id="XcM-PD-mHt"/>
+                            <constraint firstItem="diA-kK-EjV" firstAttribute="top" secondItem="9oB-rY-ckk" secondAttribute="bottom" constant="20" id="acq-Jc-A9A"/>
+                            <constraint firstItem="9oB-rY-ckk" firstAttribute="centerX" secondItem="wu6-TO-1qx" secondAttribute="centerX" id="fzc-rH-9Ex"/>
+                            <constraint firstItem="wu6-TO-1qx" firstAttribute="top" secondItem="9oB-rY-ckk" secondAttribute="top" constant="25" id="iEq-Ty-MAF"/>
+                            <constraint firstItem="9oB-rY-ckk" firstAttribute="width" secondItem="wu6-TO-1qx" secondAttribute="width" id="kho-SZ-WR5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>
+                    </view>
+                    <connections>
+                        <outlet property="displayNameLabel" destination="9oB-rY-ckk" id="1IR-8O-HZI"/>
+                        <outlet property="emailTextField" destination="joG-vV-PbT" id="JbB-FR-hLV"/>
+                        <outlet property="logoutButton" destination="diA-kK-EjV" id="fHi-GW-UxV"/>
+                        <outlet property="nativeLoginView" destination="iiP-Cg-x0J" id="bu4-eC-AIS"/>
+                        <outlet property="passwordTextField" destination="3pZ-cC-mLF" id="EmD-7H-8BD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69" y="69"/>
+        </scene>
+    </scenes>
+</document>

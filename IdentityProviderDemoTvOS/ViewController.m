@@ -1,9 +1,9 @@
 //
 //  ViewController.m
-//  Demo
+//  IdentityProviderDemoTvOS
 //
-//  Created by Rayan Arnaout on 18.12.19.
-//  Copyright © 2019 European Broadcasting Union. All rights reserved.
+//  Created by Rayan Arnaout on 27.08.20.
+//  Copyright © 2020 European Broadcasting Union. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -14,7 +14,7 @@ static NSString * const LastLoggedInEmailAddress = @"LastLoggedInEmailAddress";
 @interface ViewController ()
 
 @property (nonatomic, weak) IBOutlet UILabel *displayNameLabel;
-@property (nonatomic, weak) IBOutlet UIButton *accountButton;
+@property (nonatomic, weak) IBOutlet UIButton *logoutButton;
 
 @property (nonatomic, weak) IBOutlet UIView *nativeLoginView;
 @property (nonatomic, weak) IBOutlet UITextField *emailTextField;
@@ -25,8 +25,6 @@ static NSString * const LastLoggedInEmailAddress = @"LastLoggedInEmailAddress";
 @end
 
 @implementation ViewController
-
-#pragma mark View lifecycle
 
 - (void)viewDidLoad
 {
@@ -45,15 +43,6 @@ static NSString * const LastLoggedInEmailAddress = @"LastLoggedInEmailAddress";
     [self reloadData];
 }
 
-#pragma mark Getters and setters
-
-- (NSString *)title
-{
-    return @"Peach IDP demo";
-}
-
-#pragma mark UI
-
 - (void)reloadData
 {
     PeachIdentityProvider *identityProvider = PeachIdentityProvider.defaultProvider;
@@ -71,20 +60,10 @@ static NSString * const LastLoggedInEmailAddress = @"LastLoggedInEmailAddress";
     else {
         self.nativeLoginView.alpha = 1;
         self.displayNameLabel.text = @"Not logged in";
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Login", nil)
-                                                                                  style:UIBarButtonItemStylePlain
-                                                                                 target:self
-                                                                                 action:@selector(login:)];
+        self.navigationItem.rightBarButtonItem = nil;
     }
     
-    self.accountButton.hidden = ! identityProvider.loggedIn;
-}
-
-#pragma mark Actions
-
-- (IBAction)showAccount:(id)sender
-{
-    [PeachIdentityProvider.defaultProvider showProfileViewWithTitle:@"My Profile"];
+    self.logoutButton.hidden = ! identityProvider.loggedIn;
 }
 
 - (IBAction)nativeLogin:(id)sender
@@ -108,13 +87,7 @@ static NSString * const LastLoggedInEmailAddress = @"LastLoggedInEmailAddress";
     }];
 }
 
-- (void)login:(id)sender
-{
-    NSString *lastEmailAddress = [NSUserDefaults.standardUserDefaults stringForKey:LastLoggedInEmailAddress];
-    [PeachIdentityProvider.defaultProvider loginWithEmailAddress:lastEmailAddress];
-}
-
-- (void)logout:(id)sender
+- (IBAction)logout:(id)sender
 {
     [PeachIdentityProvider.defaultProvider logout];
 }

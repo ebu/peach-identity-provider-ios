@@ -7,13 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9518212C23C3820500CCB871 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9518212B23C3820400CCB871 /* README.md */; };
 		9534CEAB23ACB17F005D79A2 /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95DA47B723ABBD310040430A /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9534CEAC23ACB19F005D79A2 /* MAKVONotificationCenter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95C854BB23A8BFAE00A1B772 /* MAKVONotificationCenter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9534CEAD23ACB1A2005D79A2 /* libextobjc.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95C854BD23A8BFAE00A1B772 /* libextobjc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9534CEAE23ACB1A4005D79A2 /* FXReachability.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95C854BC23A8BFAE00A1B772 /* FXReachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9534CEAF23ACB1A6005D79A2 /* UICKeyChainStore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95C854C123AA15F700A1B772 /* UICKeyChainStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9534CED023ACB605005D79A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9534CEB223ACB4BF005D79A2 /* main.m */; };
+		958C7C3C24F808DD0009E8AE /* PeachIdentityProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C854B023A38B4300A1B772 /* PeachIdentityProvider.m */; };
+		958C7C3E24F808DD0009E8AE /* NSURL+Peach.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C854B823A3E5B900A1B772 /* NSURL+Peach.m */; };
+		958C7C3F24F808DD0009E8AE /* UIWindow+Peach.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C854A523A2923D00A1B772 /* UIWindow+Peach.m */; };
+		958C7C4024F808DD0009E8AE /* PeachIdentityDataFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C854AC23A37A9700A1B772 /* PeachIdentityDataFormat.m */; };
+		958C7C4124F808DD0009E8AE /* PeachProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C854A823A2928100A1B772 /* PeachProfile.m */; };
+		958C7C4C24F808DD0009E8AE /* PeachProfile.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C854A923A2928100A1B772 /* PeachProfile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958C7C4E24F808DD0009E8AE /* NSURL+Peach.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C854B723A3E5B900A1B772 /* NSURL+Peach.h */; };
+		958C7C4F24F808DD0009E8AE /* PeachIdentityDataFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C854AD23A37A9700A1B772 /* PeachIdentityDataFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958C7C5024F808DD0009E8AE /* UIWindow+Peach.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C854A423A2923D00A1B772 /* UIWindow+Peach.h */; };
+		958C7C5124F808DD0009E8AE /* PeachIdentityProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C8548D23A2921000A1B772 /* PeachIdentityProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		958C7C5E24F8093B0009E8AE /* MAKVONotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5A24F8093B0009E8AE /* MAKVONotificationCenter.framework */; };
+		958C7C6024F8093B0009E8AE /* libextobjc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5B24F8093B0009E8AE /* libextobjc.framework */; };
+		958C7C6224F8093B0009E8AE /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5C24F8093B0009E8AE /* UICKeyChainStore.framework */; };
+		958C7C6424F8093B0009E8AE /* FXReachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5D24F8093B0009E8AE /* FXReachability.framework */; };
+		958C7C6E24F819670009E8AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C7C6D24F819670009E8AE /* AppDelegate.m */; };
+		958C7C7124F819670009E8AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C7C7024F819670009E8AE /* ViewController.m */; };
+		958C7C7424F819670009E8AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 958C7C7224F819670009E8AE /* Main.storyboard */; };
+		958C7C7624F819680009E8AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 958C7C7524F819680009E8AE /* Assets.xcassets */; };
+		958C7C7924F819690009E8AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 958C7C7724F819680009E8AE /* LaunchScreen.storyboard */; };
+		958C7C7C24F819690009E8AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C7C7B24F819690009E8AE /* main.m */; };
+		958C7C8124F81A540009E8AE /* PeachIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5824F808DD0009E8AE /* PeachIdentityProvider.framework */; };
+		958C7C8224F81A540009E8AE /* PeachIdentityProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5824F808DD0009E8AE /* PeachIdentityProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		958C7C8424F81CEB0009E8AE /* FXReachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5D24F8093B0009E8AE /* FXReachability.framework */; };
+		958C7C8524F81CEB0009E8AE /* FXReachability.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5D24F8093B0009E8AE /* FXReachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		958C7C8624F81CEB0009E8AE /* libextobjc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5B24F8093B0009E8AE /* libextobjc.framework */; };
+		958C7C8724F81CEB0009E8AE /* libextobjc.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5B24F8093B0009E8AE /* libextobjc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		958C7C8824F81CEB0009E8AE /* MAKVONotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5A24F8093B0009E8AE /* MAKVONotificationCenter.framework */; };
+		958C7C8924F81CEB0009E8AE /* MAKVONotificationCenter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5A24F8093B0009E8AE /* MAKVONotificationCenter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		958C7C8A24F81CEB0009E8AE /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5C24F8093B0009E8AE /* UICKeyChainStore.framework */; };
+		958C7C8B24F81CEB0009E8AE /* UICKeyChainStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5C24F8093B0009E8AE /* UICKeyChainStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95C8549423A2921000A1B772 /* PeachIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C8548A23A2921000A1B772 /* PeachIdentityProvider.framework */; };
 		95C8549923A2921000A1B772 /* PeachIdentityProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C8549823A2921000A1B772 /* PeachIdentityProviderTests.m */; };
 		95C8549B23A2921000A1B772 /* PeachIdentityProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C8548D23A2921000A1B772 /* PeachIdentityProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -76,6 +105,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		958C7C8324F81A540009E8AE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				958C7C8224F81A540009E8AE /* PeachIdentityProvider.framework in Embed Frameworks */,
+				958C7C8924F81CEB0009E8AE /* MAKVONotificationCenter.framework in Embed Frameworks */,
+				958C7C8724F81CEB0009E8AE /* libextobjc.framework in Embed Frameworks */,
+				958C7C8B24F81CEB0009E8AE /* UICKeyChainStore.framework in Embed Frameworks */,
+				958C7C8524F81CEB0009E8AE /* FXReachability.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95C854B623A3C33400A1B772 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -123,6 +167,23 @@
 		9534CEB223ACB4BF005D79A2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9534CEB323ACB4BF005D79A2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9534CECE23ACB5A1005D79A2 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		958C7C5824F808DD0009E8AE /* PeachIdentityProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PeachIdentityProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		958C7C5924F808DD0009E8AE /* PeachIdentityProvider copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PeachIdentityProvider copy-Info.plist"; path = "/Users/rayanarnaout/Projects/PeachIdentityProvider/PeachIdentityProvider copy-Info.plist"; sourceTree = "<absolute>"; };
+		958C7C5A24F8093B0009E8AE /* MAKVONotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAKVONotificationCenter.framework; path = Carthage/Build/tvOS/MAKVONotificationCenter.framework; sourceTree = "<group>"; };
+		958C7C5B24F8093B0009E8AE /* libextobjc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libextobjc.framework; path = Carthage/Build/tvOS/libextobjc.framework; sourceTree = "<group>"; };
+		958C7C5C24F8093B0009E8AE /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = Carthage/Build/tvOS/UICKeyChainStore.framework; sourceTree = "<group>"; };
+		958C7C5D24F8093B0009E8AE /* FXReachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FXReachability.framework; path = Carthage/Build/tvOS/FXReachability.framework; sourceTree = "<group>"; };
+		958C7C6A24F819670009E8AE /* IdentityProviderDemoTvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdentityProviderDemoTvOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		958C7C6C24F819670009E8AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		958C7C6D24F819670009E8AE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		958C7C6F24F819670009E8AE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		958C7C7024F819670009E8AE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		958C7C7324F819670009E8AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		958C7C7524F819680009E8AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		958C7C7824F819680009E8AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		958C7C7A24F819690009E8AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		958C7C7B24F819690009E8AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		958C7C8C24F8E9070009E8AE /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		95C8548A23A2921000A1B772 /* PeachIdentityProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PeachIdentityProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C8548D23A2921000A1B772 /* PeachIdentityProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeachIdentityProvider.h; sourceTree = "<group>"; };
 		95C8548E23A2921000A1B772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -172,6 +233,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		958C7C4324F808DD0009E8AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				958C7C6224F8093B0009E8AE /* UICKeyChainStore.framework in Frameworks */,
+				958C7C6024F8093B0009E8AE /* libextobjc.framework in Frameworks */,
+				958C7C5E24F8093B0009E8AE /* MAKVONotificationCenter.framework in Frameworks */,
+				958C7C6424F8093B0009E8AE /* FXReachability.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		958C7C6724F819670009E8AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				958C7C8124F81A540009E8AE /* PeachIdentityProvider.framework in Frameworks */,
+				958C7C8824F81CEB0009E8AE /* MAKVONotificationCenter.framework in Frameworks */,
+				958C7C8624F81CEB0009E8AE /* libextobjc.framework in Frameworks */,
+				958C7C8A24F81CEB0009E8AE /* UICKeyChainStore.framework in Frameworks */,
+				958C7C8424F81CEB0009E8AE /* FXReachability.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95C8548723A2921000A1B772 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -217,15 +301,34 @@
 			path = TestApp;
 			sourceTree = "<group>";
 		};
+		958C7C6B24F819670009E8AE /* IdentityProviderDemoTvOS */ = {
+			isa = PBXGroup;
+			children = (
+				958C7C6C24F819670009E8AE /* AppDelegate.h */,
+				958C7C6D24F819670009E8AE /* AppDelegate.m */,
+				958C7C6F24F819670009E8AE /* ViewController.h */,
+				958C7C7024F819670009E8AE /* ViewController.m */,
+				958C7C7224F819670009E8AE /* Main.storyboard */,
+				958C7C7524F819680009E8AE /* Assets.xcassets */,
+				958C7C7724F819680009E8AE /* LaunchScreen.storyboard */,
+				958C7C7A24F819690009E8AE /* Info.plist */,
+				958C7C7B24F819690009E8AE /* main.m */,
+			);
+			path = IdentityProviderDemoTvOS;
+			sourceTree = "<group>";
+		};
 		95C8548023A2921000A1B772 = {
 			isa = PBXGroup;
 			children = (
 				9518212B23C3820400CCB871 /* README.md */,
+				958C7C8C24F8E9070009E8AE /* CHANGELOG.md */,
 				95C8548C23A2921000A1B772 /* PeachIdentityProvider */,
 				95C8549723A2921000A1B772 /* PeachIdentityProviderTests */,
 				95DA478D23AA80720040430A /* Demo */,
+				958C7C6B24F819670009E8AE /* IdentityProviderDemoTvOS */,
 				95C8548B23A2921000A1B772 /* Products */,
 				95C854B223A3C33300A1B772 /* Frameworks */,
+				958C7C5924F808DD0009E8AE /* PeachIdentityProvider copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -236,6 +339,8 @@
 				95C8549323A2921000A1B772 /* PeachIdentityProviderTests.xctest */,
 				95DA478C23AA80720040430A /* Demo.app */,
 				9534CECE23ACB5A1005D79A2 /* TestApp.app */,
+				958C7C5824F808DD0009E8AE /* PeachIdentityProvider.framework */,
+				958C7C6A24F819670009E8AE /* IdentityProviderDemoTvOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -273,6 +378,10 @@
 		95C854B223A3C33300A1B772 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				958C7C5D24F8093B0009E8AE /* FXReachability.framework */,
+				958C7C5B24F8093B0009E8AE /* libextobjc.framework */,
+				958C7C5A24F8093B0009E8AE /* MAKVONotificationCenter.framework */,
+				958C7C5C24F8093B0009E8AE /* UICKeyChainStore.framework */,
 				95DA47B723ABBD310040430A /* OHHTTPStubs.framework */,
 				95DA478623AA72AF0040430A /* WebKit.framework */,
 				95C854C123AA15F700A1B772 /* UICKeyChainStore.framework */,
@@ -324,6 +433,18 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		958C7C4924F808DD0009E8AE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				958C7C4C24F808DD0009E8AE /* PeachProfile.h in Headers */,
+				958C7C4E24F808DD0009E8AE /* NSURL+Peach.h in Headers */,
+				958C7C4F24F808DD0009E8AE /* PeachIdentityDataFormat.h in Headers */,
+				958C7C5024F808DD0009E8AE /* UIWindow+Peach.h in Headers */,
+				958C7C5124F808DD0009E8AE /* PeachIdentityProvider.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95C8548523A2921000A1B772 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -357,6 +478,42 @@
 			name = TestApp;
 			productName = Demo;
 			productReference = 9534CECE23ACB5A1005D79A2 /* TestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		958C7C3924F808DD0009E8AE /* PeachIdentityProvider tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 958C7C5524F808DD0009E8AE /* Build configuration list for PBXNativeTarget "PeachIdentityProvider tvOS" */;
+			buildPhases = (
+				958C7C3A24F808DD0009E8AE /* Sources */,
+				958C7C4324F808DD0009E8AE /* Frameworks */,
+				958C7C4924F808DD0009E8AE /* Headers */,
+				958C7C5224F808DD0009E8AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PeachIdentityProvider tvOS";
+			productName = PeachIdentityProvider;
+			productReference = 958C7C5824F808DD0009E8AE /* PeachIdentityProvider.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		958C7C6924F819670009E8AE /* IdentityProviderDemoTvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 958C7C7D24F819690009E8AE /* Build configuration list for PBXNativeTarget "IdentityProviderDemoTvOS" */;
+			buildPhases = (
+				958C7C6624F819670009E8AE /* Sources */,
+				958C7C6724F819670009E8AE /* Frameworks */,
+				958C7C6824F819670009E8AE /* Resources */,
+				958C7C8324F81A540009E8AE /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IdentityProviderDemoTvOS;
+			productName = IdentityProviderDemoTvOS;
+			productReference = 958C7C6A24F819670009E8AE /* IdentityProviderDemoTvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 		95C8548923A2921000A1B772 /* PeachIdentityProvider */ = {
@@ -425,6 +582,9 @@
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "European Broadcasting Union";
 				TargetAttributes = {
+					958C7C6924F819670009E8AE = {
+						CreatedOnToolsVersion = 11.6;
+					};
 					95C8548923A2921000A1B772 = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
@@ -451,9 +611,11 @@
 			projectRoot = "";
 			targets = (
 				95C8548923A2921000A1B772 /* PeachIdentityProvider */,
+				958C7C3924F808DD0009E8AE /* PeachIdentityProvider tvOS */,
 				95C8549223A2921000A1B772 /* PeachIdentityProviderTests */,
 				95DA478B23AA80720040430A /* Demo */,
 				9534CEB623ACB5A1005D79A2 /* TestApp */,
+				958C7C6924F819670009E8AE /* IdentityProviderDemoTvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -466,11 +628,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		958C7C5224F808DD0009E8AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		958C7C6824F819670009E8AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				958C7C7924F819690009E8AE /* LaunchScreen.storyboard in Resources */,
+				958C7C7624F819680009E8AE /* Assets.xcassets in Resources */,
+				958C7C7424F819670009E8AE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95C8548823A2921000A1B772 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9518212C23C3820500CCB871 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +677,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				9534CED023ACB605005D79A2 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		958C7C3A24F808DD0009E8AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				958C7C3C24F808DD0009E8AE /* PeachIdentityProvider.m in Sources */,
+				958C7C3E24F808DD0009E8AE /* NSURL+Peach.m in Sources */,
+				958C7C3F24F808DD0009E8AE /* UIWindow+Peach.m in Sources */,
+				958C7C4024F808DD0009E8AE /* PeachIdentityDataFormat.m in Sources */,
+				958C7C4124F808DD0009E8AE /* PeachProfile.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		958C7C6624F819670009E8AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				958C7C7124F819670009E8AE /* ViewController.m in Sources */,
+				958C7C7C24F819690009E8AE /* main.m in Sources */,
+				958C7C6E24F819670009E8AE /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +752,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		958C7C7224F819670009E8AE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				958C7C7324F819670009E8AE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		958C7C7724F819680009E8AE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				958C7C7824F819680009E8AE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		95DA479723AA80720040430A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -613,6 +829,113 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ch.ebu.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		958C7C5624F808DD0009E8AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = PeachIdentityProvider/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.ebu.PeachIdentityProvider;
+				PRODUCT_NAME = PeachIdentityProvider;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+			};
+			name = Debug;
+		};
+		958C7C5724F808DD0009E8AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = PeachIdentityProvider/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.ebu.PeachIdentityProvider;
+				PRODUCT_NAME = PeachIdentityProvider;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+			};
+			name = Release;
+		};
+		958C7C7E24F819690009E8AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = IdentityProviderDemoTvOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.ebu.IdentityProviderDemoTvOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.4;
+			};
+			name = Debug;
+		};
+		958C7C7F24F819690009E8AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = IdentityProviderDemoTvOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ch.ebu.IdentityProviderDemoTvOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.4;
 			};
 			name = Release;
 		};
@@ -740,7 +1063,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -756,7 +1079,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ch.ebu.PeachIdentityProvider;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -769,7 +1092,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -785,7 +1108,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ch.ebu.PeachIdentityProvider;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -890,6 +1213,24 @@
 			buildConfigurations = (
 				9534CECC23ACB5A1005D79A2 /* Debug */,
 				9534CECD23ACB5A1005D79A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		958C7C5524F808DD0009E8AE /* Build configuration list for PBXNativeTarget "PeachIdentityProvider tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				958C7C5624F808DD0009E8AE /* Debug */,
+				958C7C5724F808DD0009E8AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		958C7C7D24F819690009E8AE /* Build configuration list for PBXNativeTarget "IdentityProviderDemoTvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				958C7C7E24F819690009E8AE /* Debug */,
+				958C7C7F24F819690009E8AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
