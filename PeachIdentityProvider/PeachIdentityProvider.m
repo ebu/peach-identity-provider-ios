@@ -17,10 +17,10 @@
 
 #import <objc/runtime.h>
 #import <AuthenticationServices/AuthenticationServices.h>
-#import <UICKeyChainStore/UICKeyChainStore.h>
-#import <libextobjc/libextobjc.h>
-#import <FXReachability/FXReachability.h>
-#import <MAKVONotificationCenter/MAKVONotificationCenter.h>
+@import UICKeyChainStore;
+@import libextobjc;
+@import MAKVONotificationCenter;
+@import FXReachability;
 
 
 @import UIKit;

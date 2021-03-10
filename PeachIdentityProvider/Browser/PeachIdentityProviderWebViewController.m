@@ -7,8 +7,8 @@
 #import "PeachIdentityProviderWebViewController.h"
 #import "PeachIdentityProviderModalTransition.h"
 
-#import <libextobjc/libextobjc.h>
-#import <MAKVONotificationCenter/MAKVONotificationCenter.h>
+@import libextobjc;
+@import MAKVONotificationCenter;
 
 @interface PeachIdentityProviderWebViewController ()
 

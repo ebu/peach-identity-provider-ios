@@ -3,15 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		9534CEAB23ACB17F005D79A2 /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95DA47B723ABBD310040430A /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9534CEAC23ACB19F005D79A2 /* MAKVONotificationCenter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95C854BB23A8BFAE00A1B772 /* MAKVONotificationCenter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9534CEAD23ACB1A2005D79A2 /* libextobjc.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95C854BD23A8BFAE00A1B772 /* libextobjc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9534CEAE23ACB1A4005D79A2 /* FXReachability.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95C854BC23A8BFAE00A1B772 /* FXReachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9534CEAF23ACB1A6005D79A2 /* UICKeyChainStore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95C854C123AA15F700A1B772 /* UICKeyChainStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9534CED023ACB605005D79A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9534CEB223ACB4BF005D79A2 /* main.m */; };
 		958C7C3C24F808DD0009E8AE /* PeachIdentityProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C854B023A38B4300A1B772 /* PeachIdentityProvider.m */; };
 		958C7C3E24F808DD0009E8AE /* NSURL+Peach.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C854B823A3E5B900A1B772 /* NSURL+Peach.m */; };
@@ -23,10 +19,6 @@
 		958C7C4F24F808DD0009E8AE /* PeachIdentityDataFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C854AD23A37A9700A1B772 /* PeachIdentityDataFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		958C7C5024F808DD0009E8AE /* UIWindow+Peach.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C854A423A2923D00A1B772 /* UIWindow+Peach.h */; };
 		958C7C5124F808DD0009E8AE /* PeachIdentityProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C8548D23A2921000A1B772 /* PeachIdentityProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		958C7C5E24F8093B0009E8AE /* MAKVONotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5A24F8093B0009E8AE /* MAKVONotificationCenter.framework */; };
-		958C7C6024F8093B0009E8AE /* libextobjc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5B24F8093B0009E8AE /* libextobjc.framework */; };
-		958C7C6224F8093B0009E8AE /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5C24F8093B0009E8AE /* UICKeyChainStore.framework */; };
-		958C7C6424F8093B0009E8AE /* FXReachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5D24F8093B0009E8AE /* FXReachability.framework */; };
 		958C7C6E24F819670009E8AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C7C6D24F819670009E8AE /* AppDelegate.m */; };
 		958C7C7124F819670009E8AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C7C7024F819670009E8AE /* ViewController.m */; };
 		958C7C7424F819670009E8AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 958C7C7224F819670009E8AE /* Main.storyboard */; };
@@ -35,14 +27,9 @@
 		958C7C7C24F819690009E8AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C7C7B24F819690009E8AE /* main.m */; };
 		958C7C8124F81A540009E8AE /* PeachIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5824F808DD0009E8AE /* PeachIdentityProvider.framework */; };
 		958C7C8224F81A540009E8AE /* PeachIdentityProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5824F808DD0009E8AE /* PeachIdentityProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		958C7C8424F81CEB0009E8AE /* FXReachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5D24F8093B0009E8AE /* FXReachability.framework */; };
-		958C7C8524F81CEB0009E8AE /* FXReachability.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5D24F8093B0009E8AE /* FXReachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		958C7C8624F81CEB0009E8AE /* libextobjc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5B24F8093B0009E8AE /* libextobjc.framework */; };
-		958C7C8724F81CEB0009E8AE /* libextobjc.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5B24F8093B0009E8AE /* libextobjc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		958C7C8824F81CEB0009E8AE /* MAKVONotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5A24F8093B0009E8AE /* MAKVONotificationCenter.framework */; };
-		958C7C8924F81CEB0009E8AE /* MAKVONotificationCenter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5A24F8093B0009E8AE /* MAKVONotificationCenter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		958C7C8A24F81CEB0009E8AE /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5C24F8093B0009E8AE /* UICKeyChainStore.framework */; };
-		958C7C8B24F81CEB0009E8AE /* UICKeyChainStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 958C7C5C24F8093B0009E8AE /* UICKeyChainStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		958F9D9A25F7A2ED0069151D /* FXReachability in Frameworks */ = {isa = PBXBuildFile; productRef = 958F9D9925F7A2ED0069151D /* FXReachability */; };
+		958F9D9F25F7A4520069151D /* libextobjc in Frameworks */ = {isa = PBXBuildFile; productRef = 958F9D9E25F7A4520069151D /* libextobjc */; };
+		958F9DA425F7A4ED0069151D /* MAKVONotificationCenter in Frameworks */ = {isa = PBXBuildFile; productRef = 958F9DA325F7A4ED0069151D /* MAKVONotificationCenter */; };
 		95C8549423A2921000A1B772 /* PeachIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C8548A23A2921000A1B772 /* PeachIdentityProvider.framework */; };
 		95C8549923A2921000A1B772 /* PeachIdentityProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C8549823A2921000A1B772 /* PeachIdentityProviderTests.m */; };
 		95C8549B23A2921000A1B772 /* PeachIdentityProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C8548D23A2921000A1B772 /* PeachIdentityProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -55,10 +42,6 @@
 		95C854B123A38B4300A1B772 /* PeachIdentityProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C854B023A38B4300A1B772 /* PeachIdentityProvider.m */; };
 		95C854B923A3E5B900A1B772 /* NSURL+Peach.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C854B723A3E5B900A1B772 /* NSURL+Peach.h */; };
 		95C854BA23A3E5B900A1B772 /* NSURL+Peach.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C854B823A3E5B900A1B772 /* NSURL+Peach.m */; };
-		95C854BE23A8BFAF00A1B772 /* MAKVONotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C854BB23A8BFAE00A1B772 /* MAKVONotificationCenter.framework */; };
-		95C854BF23A8BFAF00A1B772 /* FXReachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C854BC23A8BFAE00A1B772 /* FXReachability.framework */; };
-		95C854C023A8BFAF00A1B772 /* libextobjc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C854BD23A8BFAE00A1B772 /* libextobjc.framework */; };
-		95C854C223AA15F700A1B772 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C854C123AA15F700A1B772 /* UICKeyChainStore.framework */; };
 		95DA477F23AA3EC50040430A /* PeachIdentityProviderWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DA477823AA3EC50040430A /* PeachIdentityProviderWebViewController.m */; };
 		95DA478023AA3EC50040430A /* PeachIdentityProviderModalTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 95DA477923AA3EC50040430A /* PeachIdentityProviderModalTransition.h */; };
 		95DA478123AA3EC50040430A /* PeachIdentityProviderNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DA477A23AA3EC50040430A /* PeachIdentityProviderNavigationController.m */; };
@@ -72,19 +55,11 @@
 		95DA479B23AA80740040430A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95DA479A23AA80740040430A /* Assets.xcassets */; };
 		95DA479E23AA80740040430A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95DA479C23AA80740040430A /* LaunchScreen.storyboard */; };
 		95DA47A123AA80740040430A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DA47A023AA80740040430A /* main.m */; };
-		95DA47AC23AB66E40040430A /* FXReachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C854BC23A8BFAE00A1B772 /* FXReachability.framework */; };
-		95DA47AD23AB66E40040430A /* FXReachability.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95C854BC23A8BFAE00A1B772 /* FXReachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		95DA47AF23AB66E50040430A /* libextobjc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C854BD23A8BFAE00A1B772 /* libextobjc.framework */; };
-		95DA47B023AB66E50040430A /* libextobjc.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95C854BD23A8BFAE00A1B772 /* libextobjc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		95DA47B123AB66E60040430A /* MAKVONotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C854BB23A8BFAE00A1B772 /* MAKVONotificationCenter.framework */; };
-		95DA47B223AB66E60040430A /* MAKVONotificationCenter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95C854BB23A8BFAE00A1B772 /* MAKVONotificationCenter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95DA47B323AB66E70040430A /* PeachIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C8548A23A2921000A1B772 /* PeachIdentityProvider.framework */; };
-		95DA47B423AB66E70040430A /* PeachIdentityProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95C8548A23A2921000A1B772 /* PeachIdentityProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		95DA47B523AB66E90040430A /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C854C123AA15F700A1B772 /* UICKeyChainStore.framework */; };
-		95DA47B623AB66E90040430A /* UICKeyChainStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95C854C123AA15F700A1B772 /* UICKeyChainStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95DA47B823ABBD310040430A /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DA47B723ABBD310040430A /* OHHTTPStubs.framework */; };
 		95DA47BF23ABC5C10040430A /* PeachIdentityProvider.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95C8548A23A2921000A1B772 /* PeachIdentityProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95DA47C323ABC6480040430A /* IdentityBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DA47C123ABC6480040430A /* IdentityBaseTestCase.m */; };
+		95DF674D25F7A586000760F2 /* UICKeyChainStore in Frameworks */ = {isa = PBXBuildFile; productRef = 95DF674C25F7A586000760F2 /* UICKeyChainStore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,10 +87,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				958C7C8224F81A540009E8AE /* PeachIdentityProvider.framework in Embed Frameworks */,
-				958C7C8924F81CEB0009E8AE /* MAKVONotificationCenter.framework in Embed Frameworks */,
-				958C7C8724F81CEB0009E8AE /* libextobjc.framework in Embed Frameworks */,
-				958C7C8B24F81CEB0009E8AE /* UICKeyChainStore.framework in Embed Frameworks */,
-				958C7C8524F81CEB0009E8AE /* FXReachability.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,21 +101,6 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95DA47AE23AB66E40040430A /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				95DA47B023AB66E50040430A /* libextobjc.framework in Embed Frameworks */,
-				95DA47B423AB66E70040430A /* PeachIdentityProvider.framework in Embed Frameworks */,
-				95DA47B223AB66E60040430A /* MAKVONotificationCenter.framework in Embed Frameworks */,
-				95DA47B623AB66E90040430A /* UICKeyChainStore.framework in Embed Frameworks */,
-				95DA47AD23AB66E40040430A /* FXReachability.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		95DA47BE23ABC5B40040430A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -153,10 +109,6 @@
 			files = (
 				9534CEAB23ACB17F005D79A2 /* OHHTTPStubs.framework in CopyFiles */,
 				95DA47BF23ABC5C10040430A /* PeachIdentityProvider.framework in CopyFiles */,
-				9534CEAC23ACB19F005D79A2 /* MAKVONotificationCenter.framework in CopyFiles */,
-				9534CEAD23ACB1A2005D79A2 /* libextobjc.framework in CopyFiles */,
-				9534CEAE23ACB1A4005D79A2 /* FXReachability.framework in CopyFiles */,
-				9534CEAF23ACB1A6005D79A2 /* UICKeyChainStore.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,11 +120,6 @@
 		9534CEB323ACB4BF005D79A2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9534CECE23ACB5A1005D79A2 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		958C7C5824F808DD0009E8AE /* PeachIdentityProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PeachIdentityProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		958C7C5924F808DD0009E8AE /* PeachIdentityProvider copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PeachIdentityProvider copy-Info.plist"; path = "/Users/rayanarnaout/Projects/PeachIdentityProvider/PeachIdentityProvider copy-Info.plist"; sourceTree = "<absolute>"; };
-		958C7C5A24F8093B0009E8AE /* MAKVONotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAKVONotificationCenter.framework; path = Carthage/Build/tvOS/MAKVONotificationCenter.framework; sourceTree = "<group>"; };
-		958C7C5B24F8093B0009E8AE /* libextobjc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libextobjc.framework; path = Carthage/Build/tvOS/libextobjc.framework; sourceTree = "<group>"; };
-		958C7C5C24F8093B0009E8AE /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = Carthage/Build/tvOS/UICKeyChainStore.framework; sourceTree = "<group>"; };
-		958C7C5D24F8093B0009E8AE /* FXReachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FXReachability.framework; path = Carthage/Build/tvOS/FXReachability.framework; sourceTree = "<group>"; };
 		958C7C6A24F819670009E8AE /* IdentityProviderDemoTvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IdentityProviderDemoTvOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		958C7C6C24F819670009E8AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		958C7C6D24F819670009E8AE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -199,10 +146,6 @@
 		95C854B023A38B4300A1B772 /* PeachIdentityProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeachIdentityProvider.m; sourceTree = "<group>"; };
 		95C854B723A3E5B900A1B772 /* NSURL+Peach.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+Peach.h"; sourceTree = "<group>"; };
 		95C854B823A3E5B900A1B772 /* NSURL+Peach.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Peach.m"; sourceTree = "<group>"; };
-		95C854BB23A8BFAE00A1B772 /* MAKVONotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAKVONotificationCenter.framework; path = Carthage/Build/iOS/MAKVONotificationCenter.framework; sourceTree = "<group>"; };
-		95C854BC23A8BFAE00A1B772 /* FXReachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FXReachability.framework; path = Carthage/Build/iOS/FXReachability.framework; sourceTree = "<group>"; };
-		95C854BD23A8BFAE00A1B772 /* libextobjc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libextobjc.framework; path = Carthage/Build/iOS/libextobjc.framework; sourceTree = "<group>"; };
-		95C854C123AA15F700A1B772 /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = Carthage/Build/iOS/UICKeyChainStore.framework; sourceTree = "<group>"; };
 		95DA477823AA3EC50040430A /* PeachIdentityProviderWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeachIdentityProviderWebViewController.m; sourceTree = "<group>"; };
 		95DA477923AA3EC50040430A /* PeachIdentityProviderModalTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeachIdentityProviderModalTransition.h; sourceTree = "<group>"; };
 		95DA477A23AA3EC50040430A /* PeachIdentityProviderNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeachIdentityProviderNavigationController.m; sourceTree = "<group>"; };
@@ -237,10 +180,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				958C7C6224F8093B0009E8AE /* UICKeyChainStore.framework in Frameworks */,
-				958C7C6024F8093B0009E8AE /* libextobjc.framework in Frameworks */,
-				958C7C5E24F8093B0009E8AE /* MAKVONotificationCenter.framework in Frameworks */,
-				958C7C6424F8093B0009E8AE /* FXReachability.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,10 +188,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				958C7C8124F81A540009E8AE /* PeachIdentityProvider.framework in Frameworks */,
-				958C7C8824F81CEB0009E8AE /* MAKVONotificationCenter.framework in Frameworks */,
-				958C7C8624F81CEB0009E8AE /* libextobjc.framework in Frameworks */,
-				958C7C8A24F81CEB0009E8AE /* UICKeyChainStore.framework in Frameworks */,
-				958C7C8424F81CEB0009E8AE /* FXReachability.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,11 +195,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95DF674D25F7A586000760F2 /* UICKeyChainStore in Frameworks */,
 				95DA478723AA72AF0040430A /* WebKit.framework in Frameworks */,
-				95C854BE23A8BFAF00A1B772 /* MAKVONotificationCenter.framework in Frameworks */,
-				95C854BF23A8BFAF00A1B772 /* FXReachability.framework in Frameworks */,
-				95C854C023A8BFAF00A1B772 /* libextobjc.framework in Frameworks */,
-				95C854C223AA15F700A1B772 /* UICKeyChainStore.framework in Frameworks */,
+				958F9D9F25F7A4520069151D /* libextobjc in Frameworks */,
+				958F9D9A25F7A2ED0069151D /* FXReachability in Frameworks */,
+				958F9DA425F7A4ED0069151D /* MAKVONotificationCenter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,11 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95DA47B123AB66E60040430A /* MAKVONotificationCenter.framework in Frameworks */,
-				95DA47AF23AB66E50040430A /* libextobjc.framework in Frameworks */,
 				95DA47B323AB66E70040430A /* PeachIdentityProvider.framework in Frameworks */,
-				95DA47B523AB66E90040430A /* UICKeyChainStore.framework in Frameworks */,
-				95DA47AC23AB66E40040430A /* FXReachability.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +259,6 @@
 				958C7C6B24F819670009E8AE /* IdentityProviderDemoTvOS */,
 				95C8548B23A2921000A1B772 /* Products */,
 				95C854B223A3C33300A1B772 /* Frameworks */,
-				958C7C5924F808DD0009E8AE /* PeachIdentityProvider copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -378,16 +308,8 @@
 		95C854B223A3C33300A1B772 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				958C7C5D24F8093B0009E8AE /* FXReachability.framework */,
-				958C7C5B24F8093B0009E8AE /* libextobjc.framework */,
-				958C7C5A24F8093B0009E8AE /* MAKVONotificationCenter.framework */,
-				958C7C5C24F8093B0009E8AE /* UICKeyChainStore.framework */,
 				95DA47B723ABBD310040430A /* OHHTTPStubs.framework */,
 				95DA478623AA72AF0040430A /* WebKit.framework */,
-				95C854C123AA15F700A1B772 /* UICKeyChainStore.framework */,
-				95C854BC23A8BFAE00A1B772 /* FXReachability.framework */,
-				95C854BD23A8BFAE00A1B772 /* libextobjc.framework */,
-				95C854BB23A8BFAE00A1B772 /* MAKVONotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -531,6 +453,12 @@
 			dependencies = (
 			);
 			name = PeachIdentityProvider;
+			packageProductDependencies = (
+				958F9D9925F7A2ED0069151D /* FXReachability */,
+				958F9D9E25F7A4520069151D /* libextobjc */,
+				958F9DA325F7A4ED0069151D /* MAKVONotificationCenter */,
+				95DF674C25F7A586000760F2 /* UICKeyChainStore */,
+			);
 			productName = PeachIdentityProvider;
 			productReference = 95C8548A23A2921000A1B772 /* PeachIdentityProvider.framework */;
 			productType = "com.apple.product-type.framework";
@@ -562,13 +490,14 @@
 				95DA478823AA80720040430A /* Sources */,
 				95DA478923AA80720040430A /* Frameworks */,
 				95DA478A23AA80720040430A /* Resources */,
-				95DA47AE23AB66E40040430A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Demo;
+			packageProductDependencies = (
+			);
 			productName = Demo;
 			productReference = 95DA478C23AA80720040430A /* Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -579,7 +508,7 @@
 		95C8548123A2921000A1B772 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "European Broadcasting Union";
 				TargetAttributes = {
 					958C7C6924F819670009E8AE = {
@@ -606,6 +535,12 @@
 				Base,
 			);
 			mainGroup = 95C8548023A2921000A1B772;
+			packageReferences = (
+				958F9D9825F7A2ED0069151D /* XCRemoteSwiftPackageReference "FXReachability" */,
+				958F9D9D25F7A4520069151D /* XCRemoteSwiftPackageReference "libextobjc" */,
+				958F9DA225F7A4ED0069151D /* XCRemoteSwiftPackageReference "MAKVONotificationCenter" */,
+				95DF674B25F7A586000760F2 /* XCRemoteSwiftPackageReference "UICKeyChainStore" */,
+			);
 			productRefGroup = 95C8548B23A2921000A1B772 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -798,7 +733,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = PeachIdentityProviderTests/TestApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -821,7 +756,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = PeachIdentityProviderTests/TestApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -965,6 +900,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -990,11 +926,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1028,6 +964,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1047,7 +984,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1074,6 +1011,7 @@
 				);
 				INFOPLIST_FILE = PeachIdentityProvider/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1103,6 +1041,7 @@
 				);
 				INFOPLIST_FILE = PeachIdentityProvider/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1119,7 +1058,6 @@
 		95C854A223A2921000A1B772 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1141,7 +1079,6 @@
 		95C854A323A2921000A1B772 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1272,6 +1209,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		958F9D9825F7A2ED0069151D /* XCRemoteSwiftPackageReference "FXReachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SRGSSR/FXReachability/";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		958F9D9D25F7A4520069151D /* XCRemoteSwiftPackageReference "libextobjc" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SRGSSR/libextobjc.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		958F9DA225F7A4ED0069151D /* XCRemoteSwiftPackageReference "MAKVONotificationCenter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SRGSSR/MAKVONotificationCenter.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		95DF674B25F7A586000760F2 /* XCRemoteSwiftPackageReference "UICKeyChainStore" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/UICKeyChainStore.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		958F9D9925F7A2ED0069151D /* FXReachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 958F9D9825F7A2ED0069151D /* XCRemoteSwiftPackageReference "FXReachability" */;
+			productName = FXReachability;
+		};
+		958F9D9E25F7A4520069151D /* libextobjc */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 958F9D9D25F7A4520069151D /* XCRemoteSwiftPackageReference "libextobjc" */;
+			productName = libextobjc;
+		};
+		958F9DA325F7A4ED0069151D /* MAKVONotificationCenter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 958F9DA225F7A4ED0069151D /* XCRemoteSwiftPackageReference "MAKVONotificationCenter" */;
+			productName = MAKVONotificationCenter;
+		};
+		95DF674C25F7A586000760F2 /* UICKeyChainStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95DF674B25F7A586000760F2 /* XCRemoteSwiftPackageReference "UICKeyChainStore" */;
+			productName = UICKeyChainStore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 95C8548123A2921000A1B772 /* Project object */;
 }
