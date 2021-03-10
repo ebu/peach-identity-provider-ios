@@ -18,7 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    PeachIdentityProvider.defaultProvider = [[PeachIdentityProvider alloc] initWithWebserviceURL:[NSURL URLWithString:@"https://peach-staging.ebu.io/idp/api"] websiteURL:[NSURL URLWithString:@"https://peach-staging.ebu.io/idp"] loginMethod:PeachIdentityProviderLoginMethodAuthenticationSession];
+    //PeachIdentityProvider.defaultProvider = [[PeachIdentityProvider alloc] initWithWebserviceURL:[NSURL URLWithString:@"https://peach-staging.ebu.io/idp/api"] websiteURL:[NSURL URLWithString:@"https://peach-staging.ebu.io/idp"] loginMethod:PeachIdentityProviderLoginMethodAuthenticationSession];
+    
+    PeachIdentityProvider.defaultProvider = [[PeachIdentityProvider alloc] initWithWebserviceURL:[NSURL URLWithString:@"https://sso-sr-demo.ebu.io/api"] websiteURL:[NSURL URLWithString:@"https://sso-sr-demo.ebu.io"] loginMethod:PeachIdentityProviderLoginMethodAuthenticationSession];
     
     [NSNotificationCenter.defaultCenter addObserver:self
                                            selector:@selector(userDidLogout:)
