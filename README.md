@@ -9,7 +9,7 @@ This framework is a fork of the [SRGIdentity framework](https://github.com/SRGSS
 
 # Compatibility
 
-The library is suitable for applications running on iOS 11 and above. The project is meant to be opened with the latest Xcode version (currently Xcode 11).
+The library is suitable for applications running on iOS 11 and above. The project is meant to be opened with the latest Xcode version (currently Xcode 12.4).
 
 # Installation
 
@@ -29,13 +29,6 @@ github "ebu/peach-identity-provider-ios"
 ```
 
 Run `carthage update` to build the framework and drag the built `PeachCollector.framework` into your Xcode project.
-
-### Dependencies
-The library requires the following frameworks to be added to any target requiring it:
--   `FXReachability`: A reachability framework.
--   `libextobjc`: An utility framework.
--   `MAKVONotificationCenter`: A safe KVO framework.
--   `UICKeyChainStore`: The framework used to manage the keychain.
 
 ### Dynamic framework integration
 
