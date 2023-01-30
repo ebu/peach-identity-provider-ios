@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4820BF662987DC36009DCE23 /* FXReachability in Frameworks */ = {isa = PBXBuildFile; productRef = 4820BF652987DC36009DCE23 /* FXReachability */; };
+		4820BF682987DC36009DCE23 /* libextobjc in Frameworks */ = {isa = PBXBuildFile; productRef = 4820BF672987DC36009DCE23 /* libextobjc */; };
+		4820BF6A2987DC36009DCE23 /* MAKVONotificationCenter in Frameworks */ = {isa = PBXBuildFile; productRef = 4820BF692987DC36009DCE23 /* MAKVONotificationCenter */; };
+		4820BF6C2987DC36009DCE23 /* UICKeyChainStore in Frameworks */ = {isa = PBXBuildFile; productRef = 4820BF6B2987DC36009DCE23 /* UICKeyChainStore */; };
 		9534CEAB23ACB17F005D79A2 /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95DA47B723ABBD310040430A /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9534CED023ACB605005D79A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9534CEB223ACB4BF005D79A2 /* main.m */; };
 		958C7C3C24F808DD0009E8AE /* PeachIdentityProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C854B023A38B4300A1B772 /* PeachIdentityProvider.m */; };
@@ -180,6 +184,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4820BF682987DC36009DCE23 /* libextobjc in Frameworks */,
+				4820BF662987DC36009DCE23 /* FXReachability in Frameworks */,
+				4820BF6C2987DC36009DCE23 /* UICKeyChainStore in Frameworks */,
+				4820BF6A2987DC36009DCE23 /* MAKVONotificationCenter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +231,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4820BF642987DC16009DCE23 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				95C8548C23A2921000A1B772 /* PeachIdentityProvider */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		4820BF6D2987DC40009DCE23 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				95DA477923AA3EC50040430A /* PeachIdentityProviderModalTransition.h */,
+				95DA477E23AA3EC50040430A /* PeachIdentityProviderNavigationController.h */,
+				95DA477C23AA3EC50040430A /* PeachIdentityProviderWebViewController.h */,
+				95C8548D23A2921000A1B772 /* PeachIdentityProvider.h */,
+				95C854AD23A37A9700A1B772 /* PeachIdentityDataFormat.h */,
+				95C854A423A2923D00A1B772 /* UIWindow+Peach.h */,
+				95C854B723A3E5B900A1B772 /* NSURL+Peach.h */,
+				95C854A923A2928100A1B772 /* PeachProfile.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
 		9534CEB123ACB4BF005D79A2 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,9 +282,9 @@
 		95C8548023A2921000A1B772 = {
 			isa = PBXGroup;
 			children = (
+				4820BF642987DC16009DCE23 /* Sources */,
 				9518212B23C3820400CCB871 /* README.md */,
 				958C7C8C24F8E9070009E8AE /* CHANGELOG.md */,
-				95C8548C23A2921000A1B772 /* PeachIdentityProvider */,
 				95C8549723A2921000A1B772 /* PeachIdentityProviderTests */,
 				95DA478D23AA80720040430A /* Demo */,
 				958C7C6B24F819670009E8AE /* IdentityProviderDemoTvOS */,
@@ -278,16 +309,12 @@
 		95C8548C23A2921000A1B772 /* PeachIdentityProvider */ = {
 			isa = PBXGroup;
 			children = (
-				95C8548D23A2921000A1B772 /* PeachIdentityProvider.h */,
+				4820BF6D2987DC40009DCE23 /* include */,
 				95C854B023A38B4300A1B772 /* PeachIdentityProvider.m */,
-				95C854AD23A37A9700A1B772 /* PeachIdentityDataFormat.h */,
 				95C854AC23A37A9700A1B772 /* PeachIdentityDataFormat.m */,
 				95DA477723AA3EC50040430A /* Browser */,
-				95C854A423A2923D00A1B772 /* UIWindow+Peach.h */,
 				95C854A523A2923D00A1B772 /* UIWindow+Peach.m */,
-				95C854B723A3E5B900A1B772 /* NSURL+Peach.h */,
 				95C854B823A3E5B900A1B772 /* NSURL+Peach.m */,
-				95C854A923A2928100A1B772 /* PeachProfile.h */,
 				95C854A823A2928100A1B772 /* PeachProfile.m */,
 				95C8548E23A2921000A1B772 /* Info.plist */,
 			);
@@ -317,11 +344,8 @@
 		95DA477723AA3EC50040430A /* Browser */ = {
 			isa = PBXGroup;
 			children = (
-				95DA477923AA3EC50040430A /* PeachIdentityProviderModalTransition.h */,
 				95DA477D23AA3EC50040430A /* PeachIdentityProviderModalTransition.m */,
-				95DA477E23AA3EC50040430A /* PeachIdentityProviderNavigationController.h */,
 				95DA477A23AA3EC50040430A /* PeachIdentityProviderNavigationController.m */,
-				95DA477C23AA3EC50040430A /* PeachIdentityProviderWebViewController.h */,
 				95DA477823AA3EC50040430A /* PeachIdentityProviderWebViewController.m */,
 			);
 			path = Browser;
@@ -416,6 +440,12 @@
 			dependencies = (
 			);
 			name = "PeachIdentityProvider tvOS";
+			packageProductDependencies = (
+				4820BF652987DC36009DCE23 /* FXReachability */,
+				4820BF672987DC36009DCE23 /* libextobjc */,
+				4820BF692987DC36009DCE23 /* MAKVONotificationCenter */,
+				4820BF6B2987DC36009DCE23 /* UICKeyChainStore */,
+			);
 			productName = PeachIdentityProvider;
 			productReference = 958C7C5824F808DD0009E8AE /* PeachIdentityProvider.framework */;
 			productType = "com.apple.product-type.framework";
@@ -780,7 +810,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
-				INFOPLIST_FILE = PeachIdentityProvider/Info.plist;
+				INFOPLIST_FILE = Sources/PeachIdentityProvider/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -811,7 +841,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
-				INFOPLIST_FILE = PeachIdentityProvider/Info.plist;
+				INFOPLIST_FILE = Sources/PeachIdentityProvider/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1009,7 +1039,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = PeachIdentityProvider/Info.plist;
+				INFOPLIST_FILE = Sources/PeachIdentityProvider/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1039,7 +1069,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = PeachIdentityProvider/Info.plist;
+				INFOPLIST_FILE = Sources/PeachIdentityProvider/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1246,6 +1276,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4820BF652987DC36009DCE23 /* FXReachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 958F9D9825F7A2ED0069151D /* XCRemoteSwiftPackageReference "FXReachability" */;
+			productName = FXReachability;
+		};
+		4820BF672987DC36009DCE23 /* libextobjc */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 958F9D9D25F7A4520069151D /* XCRemoteSwiftPackageReference "libextobjc" */;
+			productName = libextobjc;
+		};
+		4820BF692987DC36009DCE23 /* MAKVONotificationCenter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 958F9DA225F7A4ED0069151D /* XCRemoteSwiftPackageReference "MAKVONotificationCenter" */;
+			productName = MAKVONotificationCenter;
+		};
+		4820BF6B2987DC36009DCE23 /* UICKeyChainStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95DF674B25F7A586000760F2 /* XCRemoteSwiftPackageReference "UICKeyChainStore" */;
+			productName = UICKeyChainStore;
+		};
 		958F9D9925F7A2ED0069151D /* FXReachability */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 958F9D9825F7A2ED0069151D /* XCRemoteSwiftPackageReference "FXReachability" */;
