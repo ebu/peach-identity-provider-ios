@@ -6,6 +6,11 @@
 //  Copyright © 2019 European Broadcasting Union. All rights reserved.
 //
 
+
+//This stops compiler warning on using double quotes for importing PeachProfile and DataFormat
+//Double quotes are required for SPM support
+#pragma clang system_header
+
 #import "PeachProfile.h"
 #import "PeachIdentityDataFormat.h"
 #import <UIKit/UIKit.h>
