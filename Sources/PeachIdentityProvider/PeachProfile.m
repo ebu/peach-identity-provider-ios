@@ -6,7 +6,7 @@
 //  Copyright © 2019 SRG SSR. All rights reserved.
 //
 
-#import "include/PeachProfile.h"
+#import "PeachProfile.h"
 
 @interface PeachProfile()
 

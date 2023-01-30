@@ -6,7 +6,7 @@
 //  Copyright © 2019 European Broadcasting Union. All rights reserved.
 //
 
-#import "include/UIWindow+Peach.h"
+#import "UIWindow+Peach.h"
 
 @implementation UIWindow (Peach)
 

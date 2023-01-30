@@ -6,8 +6,8 @@
 //  Copyright © 2019 European Broadcasting Union. All rights reserved.
 //
 
-#import <../PeachIdentityProvider/PeachProfile.h>
-#import <../PeachIdentityProvider/PeachIdentityDataFormat.h>
+#import <PeachIdentityProvider/PeachProfile.h>
+#import <PeachIdentityProvider/PeachIdentityDataFormat.h>
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN

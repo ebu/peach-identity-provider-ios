@@ -4,7 +4,7 @@
 //  License information is available from the LICENSE file.
 //
 
-#import "../include/PeachIdentityProviderModalTransition.h"
+#import "PeachIdentityProviderModalTransition.h"
 
 // For implementation details, see
 //   https://developer.apple.com/library/content/featuredarticles/ViewControllerPGforiPhoneOS/CustomizingtheTransitionAnimations.html#//apple_ref/doc/uid/TP40007457-CH16-SW1

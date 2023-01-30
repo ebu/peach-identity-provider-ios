@@ -4,9 +4,9 @@
 //  License information is available from the LICENSE file.
 //
 
-#import "../include/PeachIdentityProviderNavigationController.h"
+#import "PeachIdentityProviderNavigationController.h"
 
-#import "../include/PeachIdentityProviderModalTransition.h"
+#import "PeachIdentityProviderModalTransition.h"
 
 @interface PeachIdentityProviderNavigationController ()
 

@@ -6,7 +6,7 @@
 //  Copyright © 2019 European Broadcasting Union. All rights reserved.
 //
 
-#import "include/PeachIdentityDataFormat.h"
+#import "PeachIdentityDataFormat.h"
 
 NSString * const PeachUserDidLoginNotification = @"PeachUserDidLoginNotification";
 NSString * const PeachUserDidCancelLoginNotification = @"PeachUserDidCancelLoginNotification";
