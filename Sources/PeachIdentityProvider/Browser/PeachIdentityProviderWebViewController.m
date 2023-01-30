@@ -4,8 +4,8 @@
 //  License information is available from the LICENSE file.
 //
 
-#import "PeachIdentityProviderWebViewController.h"
-#import "PeachIdentityProviderModalTransition.h"
+#import "../include/PeachIdentityProviderWebViewController.h"
+#import "../include/PeachIdentityProviderModalTransition.h"
 
 @import libextobjc;
 @import MAKVONotificationCenter;

@@ -6,12 +6,12 @@
 //  Copyright © 2019 European Broadcasting Union. All rights reserved.
 //
 
-#import "PeachIdentityProvider.h"
+#import "include/PeachIdentityProvider.h"
 #import "UIWindow+Peach.h"
 
 #if TARGET_OS_IOS
-    #import "PeachIdentityProviderNavigationController.h"
-    #import "PeachIdentityProviderWebViewController.h"
+    #import "include/PeachIdentityProviderNavigationController.h"
+    #import "include/PeachIdentityProviderWebViewController.h"
     #import <SafariServices/SafariServices.h>
 #endif
 
