@@ -35,6 +35,16 @@ github "ebu/peach-identity-provider-ios"
 3. Drag the built `.xcframework` bundles from `Carthage/Build` into the "Frameworks and Libraries" section of your application’s Xcode project.
 4. If you are using Carthage for an application, select "Embed & Sign", otherwise "Do Not Embed".
 
+## Install via Swift Package Manager
+
+SPM integration is available since version 1.2.0
+
+- In XCode menu, click on `File` > `Swift Packages` > `Add Package Dependency...`
+- Enter the project url: `https://github.com/ebu/peach-identity-provider-ios` and click on the `Next` button.
+- Select the `master` branch and click on the `Next` button.
+- Click on the `Finish` button.
+
+
 # Usage
 
 When you want to use classes or functions provided by the library in your code, you must import it from your source files first.
