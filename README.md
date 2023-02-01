@@ -28,14 +28,22 @@ To integrate PeachIdentityProvider into your Xcode project using Carthage, speci
 github "ebu/peach-identity-provider-ios"
 ```
 
-Run `carthage update` to build the framework and drag the built `PeachCollector.framework` into your Xcode project.
-
 ### Dynamic framework integration
 
-1.  Run `carthage update` to update the dependencies (which is equivalent to `carthage update --configuration Release`).
-2.  Add the frameworks listed above and generated in the `Carthage/Build/iOS` folder to your target _Embedded binaries_.
-3.  Add a _Run script_ build phase to your target, with `/usr/local/bin/carthage copy-frameworks` as command.
-4.  Add each of the required frameworks above as input file `$(SRCROOT)/Carthage/Build/iOS/FrameworkName.framework`.
+1. Run `carthage update --use-xcframeworks`
+2. A `Cartfile.resolved` file and a `Carthage` directory will appear in the same directory where your `.xcodeproj` or `.xcworkspace` is
+3. Drag the built `.xcframework` bundles from `Carthage/Build` into the "Frameworks and Libraries" section of your application’s Xcode project.
+4. If you are using Carthage for an application, select "Embed & Sign", otherwise "Do Not Embed".
+
+## Install via Swift Package Manager
+
+SPM integration is available since version 1.2.0
+
+- In XCode menu, click on `File` > `Swift Packages` > `Add Package Dependency...`
+- Enter the project url: `https://github.com/ebu/peach-identity-provider-ios` and click on the `Next` button.
+- Select the `master` branch and click on the `Next` button.
+- Click on the `Finish` button.
+
 
 # Usage
 
